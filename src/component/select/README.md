@@ -2,7 +2,7 @@
 ## Summery
 > 选择一些选项
 ## Interfaces
-* [From Interface](../StFormInterface.ts)
+* [Form Interface](../StFormInterface.ts)
 ## Attributes
 * multiple:boolean = false
 * clearable:boolean = false
