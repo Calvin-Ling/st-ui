@@ -20,4 +20,4 @@
 
 ## 2.尝试设计
 ### 2.1 st-base-select 组件设计
-[select](src/select/README.md)
+[select](src/component/select/README.md)

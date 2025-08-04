@@ -1,5 +1,5 @@
-import StBaseElement from '../StBase';
-import StFormInterface from '../interface/StFormInterface';
+import StBaseElement from '../../StBase';
+import StFormInterface from '../../interface/StFormInterface';
 
 class StSelect extends StBaseElement implements StFormInterface {
   constructor() {
