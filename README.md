@@ -1,23 +1,88 @@
-# st-ui组件库设计风格
-## 1.前言
-### 1.1现代UI组件库设计风格了解
-#### 1.1.1主流设计风格介绍
-| 风格                | 特点                  | 适用场景         |
-| ----------------- | ------------------- | ------------ |
-| Shoelace          | 极简中性、Shadow DOM 强定制 | 通用组件 / 插件库   |
-| Fluent UI （微软） | 模块化、强引导性            | 企业系统、嵌入式     |
-| Material  （谷歌）  | 动效丰富、品牌化            | C 端面向用户产品    |
-| Tailwind + shadcn | 极简 + 快速开发           | 内部系统 / 个性化扩展 |
-| Ant Design （阿里） | 紧凑高密度、强规范           | 数据密集的后台系统    |
-#### 1.1.2选型参考
-| 问题                | 建议                      |
-| ----------------- | ----------------------- |
-| 是否强调国际化、主题自定义？    | Fluent / Material       |
-| 是否注重极致开发体验？       | Tailwind + shadcn       |
-| 是否是 C 端组件或外嵌型组件？  | Material / Fluent       |
-| 是否信息密集 / 表单为主？    | Ant Design 风格           |
-| 是否要嵌入多个系统/外部团队复用？ | Shoelace / Fluent（强调中性） |
+# Introducing Web Awesome
 
-## 2.尝试设计
-### 2.1 st-base-select 组件设计
-[select](src/component/select/README.md)
+Web Awesome is the new name for Shoelace, and version 3 is now in beta! [Come check it out!](https://webawesome.com/) 🧡
+
+**Heads up!** Most of the project's activity is now happening [in the new repo](https://github.com/shoelace-style/webawesome).
+
+---
+
+# Shoelace
+
+A forward-thinking library of web components.
+
+- Works with all frameworks 🧩
+- Works with CDNs 🚛
+- Fully customizable with CSS 🎨
+- Includes an official dark theme 🌛
+- Built with accessibility in mind ♿️
+- Open source 😸
+
+---
+
+Documentation: [shoelace.style](https://shoelace.style)
+
+Source: [github.com/shoelace-style/shoelace](https://github.com/shoelace-style/shoelace)
+
+Twitter: [@shoelace_style](https://twitter.com/shoelace_style)
+
+---
+
+## Shoemakers 🥾
+
+Shoemakers, or "Shoelace developers," can use this documentation to learn how to build Shoelace from source. You will need Node >= 14.17 to build and run the project locally.
+
+**You don't need to do any of this to use Shoelace!** This page is for people who want to contribute to the project, tinker with the source, or create a custom build of Shoelace.
+
+If that's not what you're trying to do, the [documentation website](https://shoelace.style) is where you want to be.
+
+### What are you using to build Shoelace?
+
+Components are built with [LitElement](https://lit-element.polymer-project.org/), a custom elements base class that provides an intuitive API and reactive data binding. The build is a custom script with bundling powered by [esbuild](https://esbuild.github.io/).
+
+### Forking the Repo
+
+Start by [forking the repo](https://github.com/shoelace-style/shoelace/fork) on GitHub, then clone it locally and install dependencies.
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/shoelace
+cd shoelace
+npm install
+```
+
+### Developing
+
+Once you've cloned the repo, run the following command.
+
+```bash
+npm start
+```
+
+This will spin up the dev server. After the initial build, a browser will open automatically. There is currently no hot module reloading (HMR), as browser's don't provide a way to reregister custom elements, but most changes to the source will reload the browser automatically.
+
+### Building
+
+To generate a production build, run the following command.
+
+```bash
+npm run build
+```
+
+### Creating New Components
+
+To scaffold a new component, run the following command, replacing `sl-tag-name` with the desired tag name.
+
+```bash
+npm run create sl-tag-name
+```
+
+This will generate a source file, a stylesheet, and a docs page for you. When you start the dev server, you'll find the new component in the "Components" section of the sidebar.
+
+### Contributing
+
+Shoelace is an open source project and contributions are encouraged! If you're interesting in contributing, please review the [contribution guidelines](CONTRIBUTING.md) first.
+
+## License
+
+Shoelace is available under the terms of the MIT license.
+
+Whether you're building Shoelace or building something _with_ Shoelace — have fun creating! 🥾
