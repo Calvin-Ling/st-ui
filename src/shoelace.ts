@@ -1,5 +1,7 @@
 // Components
-export { default as SlAlert } from './components/alert/alert.js';
+export { default as StButton } from './components/button/button.js';
+export { default as StIcon } from './components/icon/icon.js';
+export { default as StSpinner } from './components/spinner/spinner.js';
 /* plop:component */
 
 // Utilities

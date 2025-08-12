@@ -6,13 +6,13 @@ layout: component
 ---
 
 ```html:preview
-<sl-button>Button</sl-button>
+<st-button>Button</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
-const App = () => <SlButton>Button</SlButton>;
+const App = () => <StButton>Button</StButton>;
 ```
 
 ## Examples
@@ -22,25 +22,25 @@ const App = () => <SlButton>Button</SlButton>;
 Use the `variant` attribute to set the button's variant.
 
 ```html:preview
-<sl-button variant="default">Default</sl-button>
-<sl-button variant="primary">Primary</sl-button>
-<sl-button variant="success">Success</sl-button>
-<sl-button variant="neutral">Neutral</sl-button>
-<sl-button variant="warning">Warning</sl-button>
-<sl-button variant="danger">Danger</sl-button>
+<st-button variant="default">Default</st-button>
+<st-button variant="primary">Primary</st-button>
+<st-button variant="success">Success</st-button>
+<st-button variant="neutral">Neutral</st-button>
+<st-button variant="warning">Warning</st-button>
+<st-button variant="danger">Danger</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default">Default</SlButton>
-    <SlButton variant="primary">Primary</SlButton>
-    <SlButton variant="success">Success</SlButton>
-    <SlButton variant="neutral">Neutral</SlButton>
-    <SlButton variant="warning">Warning</SlButton>
-    <SlButton variant="danger">Danger</SlButton>
+    <StButton variant="default">Default</StButton>
+    <StButton variant="primary">Primary</StButton>
+    <StButton variant="success">Success</StButton>
+    <StButton variant="neutral">Neutral</StButton>
+    <StButton variant="warning">Warning</StButton>
+    <StButton variant="danger">Danger</StButton>
   </>
 );
 ```
@@ -50,19 +50,19 @@ const App = () => (
 Use the `size` attribute to change a button's size.
 
 ```html:preview
-<sl-button size="small">Small</sl-button>
-<sl-button size="medium">Medium</sl-button>
-<sl-button size="large">Large</sl-button>
+<st-button size="small">Small</st-button>
+<st-button size="medium">Medium</st-button>
+<st-button size="large">Large</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton size="small">Small</SlButton>
-    <SlButton size="medium">Medium</SlButton>
-    <SlButton size="large">Large</SlButton>
+    <StButton size="small">Small</StButton>
+    <StButton size="medium">Medium</StButton>
+    <StButton size="large">Large</StButton>
   </>
 );
 ```
@@ -72,37 +72,37 @@ const App = () => (
 Use the `outline` attribute to draw outlined buttons with transparent backgrounds.
 
 ```html:preview
-<sl-button variant="default" outline>Default</sl-button>
-<sl-button variant="primary" outline>Primary</sl-button>
-<sl-button variant="success" outline>Success</sl-button>
-<sl-button variant="neutral" outline>Neutral</sl-button>
-<sl-button variant="warning" outline>Warning</sl-button>
-<sl-button variant="danger" outline>Danger</sl-button>
+<st-button variant="default" outline>Default</st-button>
+<st-button variant="primary" outline>Primary</st-button>
+<st-button variant="success" outline>Success</st-button>
+<st-button variant="neutral" outline>Neutral</st-button>
+<st-button variant="warning" outline>Warning</st-button>
+<st-button variant="danger" outline>Danger</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" outline>
+    <StButton variant="default" outline>
       Default
-    </SlButton>
-    <SlButton variant="primary" outline>
+    </StButton>
+    <StButton variant="primary" outline>
       Primary
-    </SlButton>
-    <SlButton variant="success" outline>
+    </StButton>
+    <StButton variant="success" outline>
       Success
-    </SlButton>
-    <SlButton variant="neutral" outline>
+    </StButton>
+    <StButton variant="neutral" outline>
       Neutral
-    </SlButton>
-    <SlButton variant="warning" outline>
+    </StButton>
+    <StButton variant="warning" outline>
       Warning
-    </SlButton>
-    <SlButton variant="danger" outline>
+    </StButton>
+    <StButton variant="danger" outline>
       Danger
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -112,62 +112,62 @@ const App = () => (
 Use the `pill` attribute to give buttons rounded edges.
 
 ```html:preview
-<sl-button size="small" pill>Small</sl-button>
-<sl-button size="medium" pill>Medium</sl-button>
-<sl-button size="large" pill>Large</sl-button>
+<st-button size="small" pill>Small</st-button>
+<st-button size="medium" pill>Medium</st-button>
+<st-button size="large" pill>Large</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton size="small" pill>
+    <StButton size="small" pill>
       Small
-    </SlButton>
-    <SlButton size="medium" pill>
+    </StButton>
+    <StButton size="medium" pill>
       Medium
-    </SlButton>
-    <SlButton size="large" pill>
+    </StButton>
+    <StButton size="large" pill>
       Large
-    </SlButton>
+    </StButton>
   </>
 );
 ```
 
 ### Circle Buttons
 
-Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<sl-icon>` in the default slot.
+Use the `circle` attribute to create circular icon buttons. When this attribute is set, the button expects a single `<st-icon>` in the default slot.
 
 ```html:preview
-<sl-button variant="default" size="small" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<st-button variant="default" size="small" circle>
+  <st-icon name="gear" label="Settings"></st-icon>
+</st-button>
 
-<sl-button variant="default" size="medium" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<st-button variant="default" size="medium" circle>
+  <st-icon name="gear" label="Settings"></st-icon>
+</st-button>
 
-<sl-button variant="default" size="large" circle>
-  <sl-icon name="gear" label="Settings"></sl-icon>
-</sl-button>
+<st-button variant="default" size="large" circle>
+  <st-icon name="gear" label="Settings"></st-icon>
+</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
-import SlIcon from '@shoelace-style/shoelace/dist/react/icon';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
+import StIcon from '@shoelace-style/shoelace/dist/react/icon';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small" circle>
-      <SlIcon name="gear" />
-    </SlButton>
-    <SlButton variant="default" size="medium" circle>
-      <SlIcon name="gear" />
-    </SlButton>
-    <SlButton variant="default" size="large" circle>
-      <SlIcon name="gear" />
-    </SlButton>
+    <StButton variant="default" size="small" circle>
+      <StIcon name="gear" />
+    </StButton>
+    <StButton variant="default" size="medium" circle>
+      <StIcon name="gear" />
+    </StButton>
+    <StButton variant="default" size="large" circle>
+      <StIcon name="gear" />
+    </StButton>
   </>
 );
 ```
@@ -177,25 +177,25 @@ const App = () => (
 Use the `text` variant to create text buttons that share the same size as regular buttons but don't have backgrounds or borders.
 
 ```html:preview
-<sl-button variant="text" size="small">Text</sl-button>
-<sl-button variant="text" size="medium">Text</sl-button>
-<sl-button variant="text" size="large">Text</sl-button>
+<st-button variant="text" size="small">Text</st-button>
+<st-button variant="text" size="medium">Text</st-button>
+<st-button variant="text" size="large">Text</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="text" size="small">
+    <StButton variant="text" size="small">
       Text
-    </SlButton>
-    <SlButton variant="text" size="medium">
+    </StButton>
+    <StButton variant="text" size="medium">
       Text
-    </SlButton>
-    <SlButton variant="text" size="large">
+    </StButton>
+    <StButton variant="text" size="large">
       Text
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -205,27 +205,27 @@ const App = () => (
 It's often helpful to have a button that works like a link. This is possible by setting the `href` attribute, which will make the component render an `<a>` under the hood. This gives you all the default link behavior the browser provides (e.g. [[CMD/CTRL/SHIFT]] + [[CLICK]]) and exposes the `target` and `download` attributes.
 
 ```html:preview
-<sl-button href="https://example.com/">Link</sl-button>
-<sl-button href="https://example.com/" target="_blank">New Window</sl-button>
-<sl-button href="/assets/images/wordmark.svg" download="shoelace.svg">Download</sl-button>
-<sl-button href="https://example.com/" disabled>Disabled</sl-button>
+<st-button href="https://example.com/">Link</st-button>
+<st-button href="https://example.com/" target="_blank">New Window</st-button>
+<st-button href="/assets/images/wordmark.svg" download="shoelace.svg">Download</st-button>
+<st-button href="https://example.com/" disabled>Disabled</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton href="https://example.com/">Link</SlButton>
-    <SlButton href="https://example.com/" target="_blank">
+    <StButton href="https://example.com/">Link</StButton>
+    <StButton href="https://example.com/" target="_blank">
       New Window
-    </SlButton>
-    <SlButton href="/assets/images/wordmark.svg" download="shoelace.svg">
+    </StButton>
+    <StButton href="/assets/images/wordmark.svg" download="shoelace.svg">
       Download
-    </SlButton>
-    <SlButton href="https://example.com/" disabled>
+    </StButton>
+    <StButton href="https://example.com/" disabled>
       Disabled
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -239,27 +239,27 @@ When a `target` is set, the link will receive `rel="noreferrer noopener"` for [s
 As expected, buttons can be given a custom width by passing inline styles to the component (or using a class). This is useful for making buttons span the full width of their container on smaller screens.
 
 ```html:preview
-<sl-button variant="default" size="small" style="width: 100%; margin-bottom: 1rem;">Small</sl-button>
-<sl-button variant="default" size="medium" style="width: 100%; margin-bottom: 1rem;">Medium</sl-button>
-<sl-button variant="default" size="large" style="width: 100%;">Large</sl-button>
+<st-button variant="default" size="small" style="width: 100%; margin-bottom: 1rem;">Small</st-button>
+<st-button variant="default" size="medium" style="width: 100%; margin-bottom: 1rem;">Medium</st-button>
+<st-button variant="default" size="large" style="width: 100%;">Large</st-button>
 ```
 
 {% raw %}
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small" style={{ width: '100%', marginBottom: '1rem' }}>
+    <StButton variant="default" size="small" style={{ width: '100%', marginBottom: '1rem' }}>
       Small
-    </SlButton>
-    <SlButton variant="default" size="medium" style={{ width: '100%', marginBottom: '1rem' }}>
+    </StButton>
+    <StButton variant="default" size="medium" style={{ width: '100%', marginBottom: '1rem' }}>
       Medium
-    </SlButton>
-    <SlButton variant="default" size="large" style={{ width: '100%' }}>
+    </StButton>
+    <StButton variant="default" size="large" style={{ width: '100%' }}>
       Large
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -271,118 +271,118 @@ const App = () => (
 Use the `prefix` and `suffix` slots to add icons.
 
 ```html:preview
-<sl-button variant="default" size="small">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<st-button variant="default" size="small">
+  <st-icon slot="prefix" name="gear"></st-icon>
   Settings
-</sl-button>
+</st-button>
 
-<sl-button variant="default" size="small">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<st-button variant="default" size="small">
+  <st-icon slot="suffix" name="arrow-counterclockwise"></st-icon>
   Refresh
-</sl-button>
+</st-button>
 
-<sl-button variant="default" size="small">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<st-button variant="default" size="small">
+  <st-icon slot="prefix" name="link-45deg"></st-icon>
+  <st-icon slot="suffix" name="box-arrow-up-right"></st-icon>
   Open
-</sl-button>
+</st-button>
 
 <br /><br />
 
-<sl-button variant="default">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<st-button variant="default">
+  <st-icon slot="prefix" name="gear"></st-icon>
   Settings
-</sl-button>
+</st-button>
 
-<sl-button variant="default">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<st-button variant="default">
+  <st-icon slot="suffix" name="arrow-counterclockwise"></st-icon>
   Refresh
-</sl-button>
+</st-button>
 
-<sl-button variant="default">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<st-button variant="default">
+  <st-icon slot="prefix" name="link-45deg"></st-icon>
+  <st-icon slot="suffix" name="box-arrow-up-right"></st-icon>
   Open
-</sl-button>
+</st-button>
 
 <br /><br />
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="prefix" name="gear"></sl-icon>
+<st-button variant="default" size="large">
+  <st-icon slot="prefix" name="gear"></st-icon>
   Settings
-</sl-button>
+</st-button>
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="suffix" name="arrow-counterclockwise"></sl-icon>
+<st-button variant="default" size="large">
+  <st-icon slot="suffix" name="arrow-counterclockwise"></st-icon>
   Refresh
-</sl-button>
+</st-button>
 
-<sl-button variant="default" size="large">
-  <sl-icon slot="prefix" name="link-45deg"></sl-icon>
-  <sl-icon slot="suffix" name="box-arrow-up-right"></sl-icon>
+<st-button variant="default" size="large">
+  <st-icon slot="prefix" name="link-45deg"></st-icon>
+  <st-icon slot="suffix" name="box-arrow-up-right"></st-icon>
   Open
-</sl-button>
+</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
-import SlIcon from '@shoelace-style/shoelace/dist/react/icon';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
+import StIcon from '@shoelace-style/shoelace/dist/react/icon';
 
 const App = () => (
   <>
-    <SlButton variant="default" size="small">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <StButton variant="default" size="small">
+      <StIcon slot="prefix" name="gear"></StIcon>
       Settings
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="default" size="small">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <StButton variant="default" size="small">
+      <StIcon slot="suffix" name="arrow-counterclockwise"></StIcon>
       Refresh
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="default" size="small">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <StButton variant="default" size="small">
+      <StIcon slot="prefix" name="link-45deg"></StIcon>
+      <StIcon slot="suffix" name="box-arrow-up-right"></StIcon>
       Open
-    </SlButton>
+    </StButton>
 
     <br />
     <br />
 
-    <SlButton variant="default">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <StButton variant="default">
+      <StIcon slot="prefix" name="gear"></StIcon>
       Settings
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="default">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <StButton variant="default">
+      <StIcon slot="suffix" name="arrow-counterclockwise"></StIcon>
       Refresh
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="default">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <StButton variant="default">
+      <StIcon slot="prefix" name="link-45deg"></StIcon>
+      <StIcon slot="suffix" name="box-arrow-up-right"></StIcon>
       Open
-    </SlButton>
+    </StButton>
 
     <br />
     <br />
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="prefix" name="gear"></SlIcon>
+    <StButton variant="default" size="large">
+      <StIcon slot="prefix" name="gear"></StIcon>
       Settings
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="suffix" name="arrow-counterclockwise"></SlIcon>
+    <StButton variant="default" size="large">
+      <StIcon slot="suffix" name="arrow-counterclockwise"></StIcon>
       Refresh
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="default" size="large">
-      <SlIcon slot="prefix" name="link-45deg"></SlIcon>
-      <SlIcon slot="suffix" name="box-arrow-up-right"></SlIcon>
+    <StButton variant="default" size="large">
+      <StIcon slot="prefix" name="link-45deg"></StIcon>
+      <StIcon slot="suffix" name="box-arrow-up-right"></StIcon>
       Open
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -392,25 +392,25 @@ const App = () => (
 Use the `caret` attribute to add a dropdown indicator when a button will trigger a dropdown, menu, or popover.
 
 ```html:preview
-<sl-button size="small" caret>Small</sl-button>
-<sl-button size="medium" caret>Medium</sl-button>
-<sl-button size="large" caret>Large</sl-button>
+<st-button size="small" caret>Small</st-button>
+<st-button size="medium" caret>Medium</st-button>
+<st-button size="large" caret>Large</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton size="small" caret>
+    <StButton size="small" caret>
       Small
-    </SlButton>
-    <SlButton size="medium" caret>
+    </StButton>
+    <StButton size="medium" caret>
       Medium
-    </SlButton>
-    <SlButton size="large" caret>
+    </StButton>
+    <StButton size="large" caret>
       Large
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -420,37 +420,37 @@ const App = () => (
 Use the `loading` attribute to make a button busy. The width will remain the same as before, preventing adjacent elements from moving around.
 
 ```html:preview
-<sl-button variant="default" loading>Default</sl-button>
-<sl-button variant="primary" loading>Primary</sl-button>
-<sl-button variant="success" loading>Success</sl-button>
-<sl-button variant="neutral" loading>Neutral</sl-button>
-<sl-button variant="warning" loading>Warning</sl-button>
-<sl-button variant="danger" loading>Danger</sl-button>
+<st-button variant="default" loading>Default</st-button>
+<st-button variant="primary" loading>Primary</st-button>
+<st-button variant="success" loading>Success</st-button>
+<st-button variant="neutral" loading>Neutral</st-button>
+<st-button variant="warning" loading>Warning</st-button>
+<st-button variant="danger" loading>Danger</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" loading>
+    <StButton variant="default" loading>
       Default
-    </SlButton>
-    <SlButton variant="primary" loading>
+    </StButton>
+    <StButton variant="primary" loading>
       Primary
-    </SlButton>
-    <SlButton variant="success" loading>
+    </StButton>
+    <StButton variant="success" loading>
       Success
-    </SlButton>
-    <SlButton variant="neutral" loading>
+    </StButton>
+    <StButton variant="neutral" loading>
       Neutral
-    </SlButton>
-    <SlButton variant="warning" loading>
+    </StButton>
+    <StButton variant="warning" loading>
       Warning
-    </SlButton>
-    <SlButton variant="danger" loading>
+    </StButton>
+    <StButton variant="danger" loading>
       Danger
-    </SlButton>
+    </StButton>
   </>
 );
 ```
@@ -460,58 +460,58 @@ const App = () => (
 Use the `disabled` attribute to disable a button.
 
 ```html:preview
-<sl-button variant="default" disabled>Default</sl-button>
-<sl-button variant="primary" disabled>Primary</sl-button>
-<sl-button variant="success" disabled>Success</sl-button>
-<sl-button variant="neutral" disabled>Neutral</sl-button>
-<sl-button variant="warning" disabled>Warning</sl-button>
-<sl-button variant="danger" disabled>Danger</sl-button>
+<st-button variant="default" disabled>Default</st-button>
+<st-button variant="primary" disabled>Primary</st-button>
+<st-button variant="success" disabled>Success</st-button>
+<st-button variant="neutral" disabled>Neutral</st-button>
+<st-button variant="warning" disabled>Warning</st-button>
+<st-button variant="danger" disabled>Danger</st-button>
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
 
 const App = () => (
   <>
-    <SlButton variant="default" disabled>
+    <StButton variant="default" disabled>
       Default
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="primary" disabled>
+    <StButton variant="primary" disabled>
       Primary
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="success" disabled>
+    <StButton variant="success" disabled>
       Success
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="neutral" disabled>
+    <StButton variant="neutral" disabled>
       Neutral
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="warning" disabled>
+    <StButton variant="warning" disabled>
       Warning
-    </SlButton>
+    </StButton>
 
-    <SlButton variant="danger" disabled>
+    <StButton variant="danger" disabled>
       Danger
-    </SlButton>
+    </StButton>
   </>
 );
 ```
 
 ### Styling Buttons
 
-This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `sl-button[variant="primary"]`).
+This example demonstrates how to style buttons using a custom class. This is the recommended approach if you need to add additional variations. To customize an existing variation, modify the selector to target the button's `variant` attribute instead of a class (e.g. `st-button[variant="primary"]`).
 
 ```html:preview
-<sl-button class="pink">Pink Button</sl-button>
+<st-button class="pink">Pink Button</st-button>
 
 <style>
-  sl-button.pink::part(base) {
+  st-button.pink::part(base) {
     /* Set design tokens for height and border width */
-    --sl-input-height-medium: 48px;
-    --sl-input-border-width: 4px;
+    --st-input-height-medium: 48px;
+    --st-input-border-width: 4px;
 
     border-radius: 0;
     background-color: #ff1493;
@@ -522,14 +522,14 @@ This example demonstrates how to style buttons using a custom class. This is the
     color: white;
     font-size: 1.125rem;
     box-shadow: 0 2px 10px #0002;
-    transition: var(--sl-transition-medium) transform ease, var(--sl-transition-medium) border ease;
+    transition: var(--st-transition-medium) transform ease, var(--st-transition-medium) border ease;
   }
 
-  sl-button.pink::part(base):hover {
+  st-button.pink::part(base):hover {
     transform: scale(1.05) rotate(-1deg);
   }
 
-  sl-button.pink::part(base):active {
+  st-button.pink::part(base):active {
     border-top-color: #ad005c;
     border-right-color: #ff7ac1;
     border-bottom-color: #ff7ac1;
@@ -537,7 +537,7 @@ This example demonstrates how to style buttons using a custom class. This is the
     transform: scale(1.05) rotate(-1deg) translateY(2px);
   }
 
-  sl-button.pink::part(base):focus-visible {
+  st-button.pink::part(base):focus-visible {
     outline: dashed 2px deeppink;
     outline-offset: 4px;
   }

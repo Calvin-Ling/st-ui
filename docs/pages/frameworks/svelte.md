@@ -37,12 +37,12 @@ If you'd rather not use the CDN for assets, you can create a build task that cop
 ```jsx
 <h1>Live editing</h1>
 
-<sl-input label="Message" value={message} oninput={event => message = event.target.value}></sl-input>
+<st-input label="Message" value={message} oninput={event => message = event.target.value}></st-input>
 
-<sl-alert open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
+<st-alert open>
+  <st-icon slot="icon" name="info-circle"></st-icon>
   {message}
-</sl-alert>
+</st-alert>
 
 <script>
   import '@shoelace-style/shoelace/dist/components/alert/alert.js'
@@ -58,20 +58,20 @@ One caveat is there's currently Svelte only supports `bind:value` directive in `
 
 ```jsx
 // ❌ These do not work
-<sl-input bind:value="name"></sl-input>
+<st-input bind:value="name"></st-input>
 
-<sl-select bind:value="job">
-  <sl-option value="designer">Designer</sl-option>
-  <sl-option value="developer">Developer</sl-option>
-</sl-select>
+<st-select bind:value="job">
+  <st-option value="designer">Designer</st-option>
+  <st-option value="developer">Developer</st-option>
+</st-select>
 
 // ✅ These are a bit longer, but work
-<sl-input value={name} oninput={event => name = event.target.value}></sl-input>
+<st-input value={name} oninput={event => name = event.target.value}></st-input>
 
-<sl-select value={job} onsl-input={event => job = event.target.value}>
-  <sl-option value="designer">Designer</sl-option>
-  <sl-option value="developer">Developer</sl-option>
-</sl-select>
+<st-select value={job} onsl-input={event => job = event.target.value}>
+  <st-option value="designer">Designer</st-option>
+  <st-option value="developer">Developer</st-option>
+</st-select>
 ```
 
 :::tip
@@ -85,12 +85,12 @@ Slots in Shoelace/web components are functionally the same as basic slots in Sve
 Here is an example:
 
 ```jsx
-<sl-drawer label="Drawer" placement="start" class="drawer-placement-start" bind:open={drawerIsOpen}>
+<st-drawer label="Drawer" placement="start" class="drawer-placement-start" bind:open={drawerIsOpen}>
   This drawer slides in from the start.
   <div slot="footer">
-    <sl-button variant="primary" onclick={() => (drawerIsOpen = false)}>
+    <st-button variant="primary" onclick={() => (drawerIsOpen = false)}>
       Close
-    </sl-button>
+    </st-button>
   </div>
-</sl-drawer>
+</st-drawer>
 ```

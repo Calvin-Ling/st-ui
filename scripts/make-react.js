@@ -1,7 +1,7 @@
 import commandLineArgs from 'command-line-args';
+import { deleteSync } from 'del';
 import fs from 'fs';
 import path from 'path';
-import { deleteSync } from 'del';
 import prettier from 'prettier';
 import { default as prettierConfig } from '../prettier.config.js';
 import { getAllComponents } from './shared.js';
@@ -20,7 +20,7 @@ const components = getAllComponents(metadata);
 const index = [];
 
 for await (const component of components) {
-  const tagWithoutPrefix = component.tagName.replace(/^sl-/, '');
+  const tagWithoutPrefix = component.tagName.replace(/^st-/, '');
   const componentDir = path.join(reactDir, tagWithoutPrefix);
   const componentFile = path.join(componentDir, 'index.ts');
   const importPath = component.path.replace(/\.js$/, '.component.js');

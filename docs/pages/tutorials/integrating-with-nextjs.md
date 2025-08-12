@@ -177,7 +177,7 @@ Here's what that would look like, do note the `"use client";` at the top of the 
 import React from "react";
 import dynamic from "next/dynamic";
 
-const SlButton = dynamic(
+const StButton = dynamic(
   // Notice how we use the full path to the component. If you only do `import("@shoelace-style/shoelace/dist/react")` you will load the entire component library and not get tree shaking.
   () => import("@shoelace-style/shoelace/dist/react/button/index.js"),
   {
@@ -186,7 +186,7 @@ const SlButton = dynamic(
   },
 );
 
-const SlIcon = dynamic(
+const StIcon = dynamic(
   () => import("@shoelace-style/shoelace/dist/react/icon/index.js"),
   {
     loading: () => <p>Loading...</p>,
@@ -197,8 +197,8 @@ const SlIcon = dynamic(
 export default function Home() {
   return (
     <main>
-      <SlButton>Test</SlButton>
-      <SlIcon name="gear" />
+      <StButton>Test</StButton>
+      <StIcon name="gear" />
     </main>
   );
 }
@@ -272,7 +272,7 @@ function CustomEls({ URL }) {
 ```
 
 :::tip
-If we use `useEffect` instead of `useLayoutEffect`, the initial render will occur with the expected `sl-` props applied, but the subsequent render (caused by the `useEffect`) will remove those props as the custom components initialize. We _must_ use `useLayoutEffect` to have expected behavior
+If we use `useEffect` instead of `useLayoutEffect`, the initial render will occur with the expected `st-` props applied, but the subsequent render (caused by the `useEffect`) will remove those props as the custom components initialize. We _must_ use `useLayoutEffect` to have expected behavior
 :::
 
 :::tip

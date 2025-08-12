@@ -95,28 +95,34 @@
     // Update the UI
     updateSelection();
 
-    // Toggle the dark mode class
-    document.documentElement.classList.toggle('sl-theme-dark', isDark());
+    if (newTheme?.startsWith('st-')) {
+      // st-ui custom theme
+      document.documentElement.setAttribute('theme-mode', newTheme);
+    } else {
+      // Toggle the dark mode class
+      document.documentElement.removeAttribute('theme-mode');
+      document.documentElement.classList.toggle('st-theme-dark', isDark());
+    }
   }
 
   function updateSelection() {
-    const menu = document.querySelector('#theme-selector sl-menu');
+    const menu = document.querySelector('#theme-selector st-menu');
     if (!menu) return;
-    [...menu.querySelectorAll('sl-menu-item')].map(item => (item.checked = item.getAttribute('value') === theme));
+    [...menu.querySelectorAll('st-menu-item')].map(item => (item.checked = item.getAttribute('value') === theme));
   }
 
   let theme = getTheme();
 
   // Selection is not preserved when changing page, so update when opening dropdown
-  document.addEventListener('sl-show', event => {
+  document.addEventListener('st-show', event => {
     const themeSelector = event.target.closest('#theme-selector');
     if (!themeSelector) return;
     updateSelection();
   });
 
   // Listen for selections
-  document.addEventListener('sl-select', event => {
-    const menu = event.target.closest('#theme-selector sl-menu');
+  document.addEventListener('st-select', event => {
+    const menu = event.target.closest('#theme-selector st-menu');
     if (!menu) return;
     setTheme(event.detail.item.value);
   });

@@ -42,7 +42,7 @@ import "@shoelace-style/shoelace/dist/themes/light.css";
 
 <html>
   <body>
-    <sl-button>Button</sl-button>
+    <st-button>Button</st-button>
   </body>
 </html>
 
@@ -74,9 +74,9 @@ setBasePath("dist/assets");
 
 <html>
   <body>
-    <sl-tooltip content="This is a tooltip">
-      <sl-button>Hover Me</sl-button>
-    </sl-tooltip>
+    <st-tooltip content="This is a tooltip">
+      <st-button>Hover Me</st-button>
+    </st-tooltip>
   </body>
 </html>
 

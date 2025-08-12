@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
     if (!component) {
       throw new Error(
         `Unable to find a component called "${tagName}". Make sure the file name is the same as the component's tag ` +
-          `name (minus the sl- prefix).`
+        `name (minus the st- prefix).`
       );
     }
     return component;
@@ -103,13 +103,13 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('classNameToComponentName', className => {
-    let name = capitalCase(className.replace(/^Sl/, ''));
+    let name = capitalCase(className.replace(/^St/, ''));
     if (name === 'Qr Code') name = 'QR Code'; // manual override
     return name;
   });
 
   eleventyConfig.addFilter('removeSlPrefix', tagName => {
-    return tagName.replace(/^sl-/, '');
+    return tagName.replace(/^st-/, '');
   });
 
   //

@@ -10,11 +10,11 @@ You can load Shoelace via CDN or by installing it locally. If you're using a fra
 
 ## CDN Installation (Easiest)
 
-<sl-tab-group>
-<sl-tab slot="nav" panel="autoloader" active>Autoloader</sl-tab>
-<sl-tab slot="nav" panel="traditional">Traditional Loader</sl-tab>
+<st-tab-group>
+<st-tab slot="nav" panel="autoloader" active>Autoloader</st-tab>
+<st-tab slot="nav" panel="traditional">Traditional Loader</st-tab>
 
-<sl-tab-panel name="autoloader">
+<st-tab-panel name="autoloader">
 
 The experimental autoloader is the easiest and most efficient way to use Shoelace. A lightweight script watches the DOM for unregistered Shoelace elements and lazy loads them for you — even if they're added dynamically.
 
@@ -26,9 +26,9 @@ While convenient, autoloading may lead to a [Flash of Undefined Custom Elements]
 <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/shoelace-autoloader.js"></script>
 ```
 
-</sl-tab-panel>
+</st-tab-panel>
 
-<sl-tab-panel name="traditional">
+<st-tab-panel name="traditional">
 
 The traditional CDN loader registers all Shoelace elements up front. Note that, if you're only using a handful of components, it will be much more efficient to stick with the autoloader. However, you can also [cherry pick](#cherry-picking) components if you want to load specific ones up front.
 
@@ -38,12 +38,12 @@ The traditional CDN loader registers all Shoelace elements up front. Note that, 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/shoelace.js" ></script>
 ```
 
-</sl-tab-panel>
-</sl-tab-group>
+</st-tab-panel>
+</st-tab-group>
 
 ### Dark Theme
 
-The code above will load the light theme. If you want to use the [dark theme](/getting-started/themes#dark-theme) instead, update the stylesheet as shown below and add `<html class="sl-theme-dark">` to your page.
+The code above will load the light theme. If you want to use the [dark theme](/getting-started/themes#dark-theme) instead, update the stylesheet as shown below and add `<html class="st-theme-dark">` to your page.
 
 <!-- prettier-ignore -->
 ```html
@@ -64,7 +64,7 @@ If you want to load the light or dark theme based on the user's `prefers-color-s
   rel="stylesheet"
   media="(prefers-color-scheme:dark)"
   href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@%VERSION%/%CDNDIR%/themes/dark.css"
-  onload="document.documentElement.classList.add('sl-theme-dark');"
+  onload="document.documentElement.classList.add('st-theme-dark');"
 />
 ```
 
@@ -147,7 +147,7 @@ Here's an example that loads only the button component. Again, if you're not usi
 <script type="module" data-shoelace="/path/to/shoelace/%NPMDIR%">
   import '@shoelace-style/shoelace/%NPMDIR%/components/button/button.js';
 
-  // <sl-button> is ready to use!
+  // <st-button> is ready to use!
 </script>
 ```
 
@@ -189,7 +189,7 @@ import { setBasePath } from '@shoelace-style/shoelace/%NPMDIR%/utilities/base-pa
 // Set the base path to the folder you copied Shoelace's assets to
 setBasePath('/path/to/shoelace/%NPMDIR%');
 
-// <sl-button>, <sl-icon>, <sl-input>, and <sl-rating> are ready to use!
+// <st-button>, <st-icon>, <st-input>, and <st-rating> are ready to use!
 ```
 
 :::warning
@@ -201,8 +201,8 @@ Component modules include side effects for registration purposes. Because of thi
 By default, imports to components will auto-register themselves. This may not be ideal in all cases. To import just the component's class without auto-registering it's tag we can do the following:
 
 ```diff
-- import SlButton from '@shoelace-style/shoelace/%NPMDIR%/components/button/button.js';
-+ import SlButton from '@shoelace-style/shoelace/%NPMDIR%/components/button/button.component.js';
+- import StButton from '@shoelace-style/shoelace/%NPMDIR%/components/button/button.js';
++ import StButton from '@shoelace-style/shoelace/%NPMDIR%/components/button/button.component.js';
 ```
 
 Notice how the import ends with `.component.js`. This is the current convention to convey the import does not register itself.

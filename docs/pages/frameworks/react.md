@@ -40,12 +40,12 @@ Preact users facing type errors using components may benefit from setting "paths
 
 ### Importing Components
 
-Every Shoelace component is available to import as a React component. Note that we're importing the `<SlButton>` _React component_ instead of the `<sl-button>` _custom element_ in the example below.
+Every Shoelace component is available to import as a React component. Note that we're importing the `<StButton>` _React component_ instead of the `<st-button>` _custom element_ in the example below.
 
 ```jsx
-import SlButton from '@shoelace-style/shoelace/%NPMDIR%/react/button/index.js';
+import StButton from '@shoelace-style/shoelace/%NPMDIR%/react/button/index.js';
 
-const MyComponent = () => <SlButton variant="primary">Click me</SlButton>;
+const MyComponent = () => <StButton variant="primary">Click me</StButton>;
 
 export default MyComponent;
 ```
@@ -55,32 +55,32 @@ export default MyComponent;
 Previously, it was recommended to import from a single entrypoint like so:
 
 ```jsx
-import { SlButton } from '@shoelace-style/shoelace/%NPMDIR%/react';
+import { StButton } from '@shoelace-style/shoelace/%NPMDIR%/react';
 ```
 
 However, tree-shaking extra Shoelace components proved to be a challenge. As a result, we now recommend cherry-picking components you want to use, rather than importing from a single entrypoint.
 
 ```diff
-- import { SlButton } from '@shoelace-style/shoelace/%NPMDIR%/react';
-+ import SlButton from '@shoelace-style/shoelace/%NPMDIR%/react/button/index.js';
+- import { StButton } from '@shoelace-style/shoelace/%NPMDIR%/react';
++ import StButton from '@shoelace-style/shoelace/%NPMDIR%/react/button/index.js';
 ```
 
 You can find a copy + paste import for each component in the "importing" section of its documentation.
 
 ### Event Handling
 
-Many Shoelace components emit [custom events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). For example, the [input component](/components/input) emits the `sl-input` event when it receives input. In React, you can listen for the event using `onSlInput`.
+Many Shoelace components emit [custom events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent). For example, the [input component](/components/input) emits the `st-input` event when it receives input. In React, you can listen for the event using `onSlInput`.
 
 Here's how you can bind the input's value to a state variable.
 
 ```jsx
 import { useState } from 'react';
-import SlInput from '@shoelace-style/shoelace/%NPMDIR%/react/input/index.js';
+import StInput from '@shoelace-style/shoelace/%NPMDIR%/react/input/index.js';
 
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <SlInput value={value} onSlInput={event => setValue(event.target.value)} />;
+  return <StInput value={value} onSlInput={event => setValue(event.target.value)} />;
 }
 
 export default MyComponent;
@@ -90,13 +90,13 @@ If you're using TypeScript, it's important to note that `event.target` will be a
 
 ```tsx
 import { useState } from 'react';
-import SlInput from '@shoelace-style/shoelace/%NPMDIR%/react/input/index.js';
+import StInput from '@shoelace-style/shoelace/%NPMDIR%/react/input/index.js';
 import type SlInputElement from '@shoelace-style/shoelace/%NPMDIR%/components/input/input.js';
 
 function MyComponent() {
   const [value, setValue] = useState('');
 
-  return <SlInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
+  return <StInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
 }
 
 export default MyComponent;
@@ -106,7 +106,7 @@ You can also import the event type for use in your callbacks, shown below.
 
 ```tsx
 import { useCallback, useState } from 'react';
-import SlInput, { type SlInputEvent } from '@shoelace-style/shoelace/%NPMDIR%/react/input/index.js';
+import StInput, { type SlInputEvent } from '@shoelace-style/shoelace/%NPMDIR%/react/input/index.js';
 import type SlInputElement from '@shoelace-style/shoelace/%NPMDIR%/components/input/input.js';
 
 function MyComponent() {
@@ -115,7 +115,7 @@ function MyComponent() {
     setValue(event.detail);
   }, []);
 
-  return <SlInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
+  return <StInput value={value} onSlInput={event => setValue((event.target as SlInputElement).value)} />;
 }
 
 export default MyComponent;

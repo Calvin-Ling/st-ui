@@ -1,11 +1,11 @@
-import * as path from 'path';
+import commandLineArgs from 'command-line-args';
+import { parse } from 'comment-parser';
 import { customElementJetBrainsPlugin } from 'custom-element-jet-brains-integration';
 import { customElementVsCodePlugin } from 'custom-element-vs-code-integration';
 import { customElementVuejsPlugin } from 'custom-element-vuejs-integration';
-import { parse } from 'comment-parser';
-import { pascalCase } from 'pascal-case';
-import commandLineArgs from 'command-line-args';
 import fs from 'fs';
+import { pascalCase } from 'pascal-case';
+import * as path from 'path';
 
 const packageData = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const { name, description, version, author, homepage, license } = packageData;
@@ -57,7 +57,7 @@ export default {
             }
 
             const tagNameWithoutPrefix = path.basename(importPath, '.component.ts');
-            const tagName = 'sl-' + tagNameWithoutPrefix;
+            const tagName = 'st-' + tagNameWithoutPrefix;
 
             classDoc.tagNameWithoutPrefix = tagNameWithoutPrefix;
             classDoc.tagName = tagName;
@@ -204,7 +204,7 @@ export default {
       referencesTemplate: (_, tag) => [
         {
           name: 'Documentation',
-          url: `https://shoelace.style/components/${tag.replace('sl-', '')}`
+          url: `https://shoelace.style/components/${tag.replace('st-', '')}`
         }
       ]
     }),
@@ -216,7 +216,7 @@ export default {
       referencesTemplate: (_, tag) => {
         return {
           name: 'Documentation',
-          url: `https://shoelace.style/components/${tag.replace('sl-', '')}`
+          url: `https://shoelace.style/components/${tag.replace('st-', '')}`
         };
       }
     }),
@@ -224,7 +224,7 @@ export default {
     customElementVuejsPlugin({
       outdir: './dist/types/vue',
       fileName: 'index.d.ts',
-      componentTypePath: (_, tag) => `../../components/${tag.replace('sl-', '')}/${tag.replace('sl-', '')}.component.js`
+      componentTypePath: (_, tag) => `../../components/${tag.replace('st-', '')}/${tag.replace('st-', '')}.component.js`
     })
   ]
 };

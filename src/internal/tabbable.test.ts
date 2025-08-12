@@ -1,10 +1,10 @@
 import { aTimeout, elementUpdated, expect, fixture } from '@open-wc/testing';
 
+import { sendKeys } from '@web/test-runner-commands';
+import { html } from 'lit';
+import type { SlDialog } from '../shoelace.js';
 import { activeElements, getDeepestActiveElement } from './active-elements.js';
 import { clickOnElement } from './test.js';
-import { html } from 'lit';
-import { sendKeys } from '@web/test-runner-commands';
-import type { SlDialog } from '../shoelace.js';
 
 import '../../../dist/shoelace.js';
 
@@ -31,13 +31,13 @@ window.customElements.define(
     }
     connectedCallback() {
       this.shadowRoot!.innerHTML = `
-      <sl-drawer>
+      <st-drawer>
         <slot name="label" slot="label"></slot>
 
         <slot></slot>
 
         <slot name="footer" slot="footer"></slot>
-      </sl-drawer>
+      </st-drawer>
     `;
     }
   }
@@ -47,13 +47,13 @@ it('Should allow tabbing to slotted elements', async () => {
   const el = await fixture(html`
     <tab-test-1>
       <div slot="label">
-        <sl-button id="focus-1">Focus 1</sl-button>
+        <st-button id="focus-1">Focus 1</st-button>
       </div>
 
       <div>
-        <!-- Focus 2 lives as the close-button from <sl-drawer> -->
-        <sl-button id="focus-3">Focus 3</sl-button>
-        <button id="focus-4">Focus 4</sl-button>
+        <!-- Focus 2 lives as the close-button from <st-drawer> -->
+        <st-button id="focus-3">Focus 3</st-button>
+        <button id="focus-4">Focus 4</st-button>
         <input id="focus-5" value="Focus 5">
       </div>
 
@@ -64,7 +64,7 @@ it('Should allow tabbing to slotted elements', async () => {
     </tab-test-1>
   `);
 
-  const drawer = el.shadowRoot?.querySelector('sl-drawer');
+  const drawer = el.shadowRoot?.querySelector('st-drawer');
 
   if (drawer === null || drawer === undefined) throw Error('Could not find drawer inside of the test element');
 
@@ -74,12 +74,12 @@ it('Should allow tabbing to slotted elements', async () => {
 
   const focusZero = drawer.shadowRoot?.querySelector("[role='dialog']");
 
-  if (focusZero === null || focusZero === undefined) throw Error('Could not find dialog panel inside <sl-drawer>');
+  if (focusZero === null || focusZero === undefined) throw Error('Could not find dialog panel inside <st-drawer>');
 
   const focusOne = el.querySelector('#focus-1');
   const focusTwo = drawer.shadowRoot?.querySelector("[part~='close-button']");
 
-  if (focusTwo === null || focusTwo === undefined) throw Error('Could not find close button inside <sl-drawer>');
+  if (focusTwo === null || focusTwo === undefined) throw Error('Could not find close button inside <st-drawer>');
 
   const focusThree = el.querySelector('#focus-3');
   const focusFour = el.querySelector('#focus-4');
@@ -147,16 +147,16 @@ it('Should allow tabbing to slotted elements', async () => {
 
 it.skip('Should account for when focus is changed from outside sources (like clicking)', async () => {
   const dialog = await fixture(html`
-    <sl-dialog open="" label="Dialog" class="dialog-overview">
+    <st-dialog open="" label="Dialog" class="dialog-overview">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      <sl-input placeholder="tab to me"></sl-input>
-      <sl-button slot="footer" variant="primary">Close</sl-button>
-    </sl-dialog>
+      <st-input placeholder="tab to me"></st-input>
+      <st-button slot="footer" variant="primary">Close</st-button>
+    </st-dialog>
   `);
 
-  const inputEl = dialog.querySelector('sl-input')!;
-  const closeButton = dialog.shadowRoot!.querySelector('sl-icon-button')!;
-  const footerButton = dialog.querySelector('sl-button')!;
+  const inputEl = dialog.querySelector('st-input')!;
+  const closeButton = dialog.shadowRoot!.querySelector('st-icon-button')!;
+  const footerButton = dialog.querySelector('st-button')!;
 
   expect(activeElementsArray()).to.not.include(inputEl);
 
@@ -187,17 +187,17 @@ it('Should respect nested modal instances', async () => {
   /* eslint-disable */
   await fixture(html`
     <div>
-      <sl-button id="open-dialog-1" @click=${() => dialogOne().show()}></sl-button>
-      <sl-dialog id="dialog-1" label="Dialog 1">
-        <sl-button @click=${() => dialogTwo().show()} id="open-dialog-2">Open Dialog 2</sl-button>
-        <sl-button slot="footer" variant="primary">Close</sl-button>
-      </sl-dialog>
+      <st-button id="open-dialog-1" @click=${() => dialogOne().show()}></st-button>
+      <st-dialog id="dialog-1" label="Dialog 1">
+        <st-button @click=${() => dialogTwo().show()} id="open-dialog-2">Open Dialog 2</st-button>
+        <st-button slot="footer" variant="primary">Close</st-button>
+      </st-dialog>
 
-      <sl-dialog id="dialog-2" label="Dialog 2">
-        <sl-input id="focus-1" autofocus="" placeholder="I will have focus when the dialog is opened"></sl-input>
-        <sl-input id="focus-2" placeholder="Second input"></sl-input>
-        <sl-button slot="footer" variant="primary" class="close-2">Close</sl-button>
-      </sl-dialog>
+      <st-dialog id="dialog-2" label="Dialog 2">
+        <st-input id="focus-1" autofocus="" placeholder="I will have focus when the dialog is opened"></st-input>
+        <st-input id="focus-2" placeholder="Second input"></st-input>
+        <st-button slot="footer" variant="primary" class="close-2">Close</st-button>
+      </st-dialog>
     </div>
   `);
   /* eslint-enable */

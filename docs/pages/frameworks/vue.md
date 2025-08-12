@@ -61,9 +61,9 @@ Once you have configured your application for custom elements, you should be abl
   <div class="container">
     <h1>QR code generator</h1>
 
-    <sl-input maxlength="255" clearable label="Value" v-model="qrCode"></sl-input>
+    <st-input maxlength="255" clearable label="Value" v-model="qrCode"></st-input>
 
-    <sl-qr-code :value="qrCode"></sl-qr-code>
+    <st-qr-code :value="qrCode"></st-qr-code>
   </div>
 </template>
 
@@ -81,8 +81,8 @@ Once you have configured your application for custom elements, you should be abl
     margin: 0 auto;
   }
 
-  sl-input {
-    margin: var(--sl-spacing-large) 0;
+  st-input {
+    margin: var(--st-spacing-large) 0;
   }
 </style>
 ```
@@ -92,7 +92,7 @@ Once you have configured your application for custom elements, you should be abl
 When binding complex data such as objects and arrays, use the `.prop` modifier to make Vue bind them as a property instead of an attribute.
 
 ```html
-<sl-color-picker :swatches.prop="mySwatches" />
+<st-color-picker :swatches.prop="mySwatches" />
 ```
 
 ### Two-way Binding
@@ -101,12 +101,12 @@ One caveat is there's currently [no support for v-model on custom elements](http
 
 ```html
 <!-- ❌ This doesn't work -->
-<sl-input v-model="name"></sl-input>
+<st-input v-model="name"></st-input>
 <!-- ✅ This works, but it's a bit longer -->
-<sl-input :value="name" @input="name = $event.target.value"></sl-input>
+<st-input :value="name" @input="name = $event.target.value"></st-input>
 ```
 
-If that's too verbose for your liking, you can use a custom directive instead. [This utility](https://www.npmjs.com/package/@shoelace-style/vue-sl-model) adds a custom directive that will work just like `v-model` but for Shoelace components.
+If that's too verbose for your liking, you can use a custom directive instead. [This utility](https://www.npmjs.com/package/@shoelace-style/vue-st-model) adds a custom directive that will work just like `v-model` but for Shoelace components.
 
 :::tip
 Are you using Shoelace with Vue? [Help us improve this page!](https://github.com/shoelace-style/shoelace/blob/next/docs/frameworks/vue.md)
@@ -119,10 +119,10 @@ Slots in Shoelace/web components are functionally the same as basic slots in Vue
 Here is an example:
 
 ```html
-<sl-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
+<st-drawer label="Drawer" placement="start" class="drawer-placement-start" :open="drawerIsOpen">
   This drawer slides in from the start.
   <div slot="footer">
-    <sl-button variant="primary" @click=" drawerIsOpen = false">Close</sl-button>
+    <st-button variant="primary" @click=" drawerIsOpen = false">Close</st-button>
   </div>
-</sl-drawer>
+</st-drawer>
 ```

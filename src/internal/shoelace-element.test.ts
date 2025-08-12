@@ -2,11 +2,11 @@
 import { expect } from '@open-wc/testing';
 import { readFile } from '@web/test-runner-commands';
 
-import SlButton from '../../dist/components/button/button.component.js';
+import StButton from '../../dist/components/button/button.component.js';
 
 // We don't use ShoelaceElement directly because it shouldn't exist in the final bundle.
 /* eslint-disable */
-const ShoelaceElement = Object.getPrototypeOf(SlButton);
+const ShoelaceElement = Object.getPrototypeOf(StButton);
 /* eslint-enable */
 
 // @ts-expect-error Isn't written in TS.
@@ -47,17 +47,17 @@ beforeEach(() => {
 });
 
 it('Should provide a console warning if attempting to register the same tag twice', () => {
-  class MyButton extends SlButton {
+  class MyButton extends StButton {
     static version = '0.4.5';
   }
 
   const stub = Sinon.stub(console, 'warn');
 
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.false;
+  expect(Boolean(window.customElements.get('st-button'))).to.be.false;
   /* eslint-disable */
-  SlButton.define('sl-button');
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.true;
-  MyButton.define('sl-button');
+  StButton.define('st-button');
+  expect(Boolean(window.customElements.get('st-button'))).to.be.true;
+  MyButton.define('st-button');
   /* eslint-enable */
 
   expect(stub).calledOnce;
@@ -67,7 +67,7 @@ it('Should provide a console warning if attempting to register the same tag twic
   expect(warning).to.match(
     new RegExp(
       /* eslint-disable */
-      `Attempted to register <sl-button> v${MyButton.version}, but <sl-button> v${SlButton.version} has already been registered`
+      `Attempted to register <st-button> v${MyButton.version}, but <st-button> v${StButton.version} has already been registered`
       /* eslint-enable */
     ),
     'i'
@@ -75,15 +75,15 @@ it('Should provide a console warning if attempting to register the same tag twic
 });
 
 it('Should not provide a console warning if versions match', () => {
-  class MyButton extends SlButton {}
+  class MyButton extends StButton { }
 
   const stub = Sinon.stub(console, 'warn');
 
   /* eslint-disable */
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.false;
-  SlButton.define('sl-button');
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.true;
-  MyButton.define('sl-button');
+  expect(Boolean(window.customElements.get('st-button'))).to.be.false;
+  StButton.define('st-button');
+  expect(Boolean(window.customElements.get('st-button'))).to.be.true;
+  MyButton.define('st-button');
   /* eslint-enable */
 
   expect(stub).not.called;
@@ -92,27 +92,27 @@ it('Should not provide a console warning if versions match', () => {
 it('Should register dependencies when the element is constructed the first time', () => {
   /* eslint-disable */
   class MyElement extends ShoelaceElement {
-    static dependencies = { 'sl-button': SlButton };
+    static dependencies = { 'st-button': StButton };
     static version = 'random-version';
   }
   /* eslint-enable */
 
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.false;
+  expect(Boolean(window.customElements.get('st-button'))).to.be.false;
 
   // eslint-disable
-  MyElement.define('sl-element');
+  MyElement.define('st-element');
   // eslint-enable
 
   // this should be false until the constructor is called via new
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.false;
+  expect(Boolean(window.customElements.get('st-button'))).to.be.false;
 
   // We can call it directly since we know its registered.
   /* eslint-disable */
   // @ts-expect-error If its undefined, error.
-  new (window.customElements.get('sl-element'))();
+  new (window.customElements.get('st-element'))();
   /* eslint-enable */
 
-  expect(Boolean(window.customElements.get('sl-button'))).to.be.true;
+  expect(Boolean(window.customElements.get('st-button'))).to.be.true;
 });
 
 // This looks funky here. This grabs all of our components and tests for side effects.

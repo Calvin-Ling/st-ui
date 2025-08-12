@@ -1,6 +1,6 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit';
+import type StButton from '../components/button/button.js';
 import type { ShoelaceFormControl } from '../internal/shoelace-element.js';
-import type SlButton from '../components/button/button.js';
 
 //
 // We store a WeakMap of forms + controls so we can keep references to all Shoelace controls within a given form. As
@@ -68,7 +68,7 @@ export class FormControlController implements ReactiveController {
     this.options = {
       form: input => {
         // If there's a form attribute, use it to find the target form by id
-        // Controls may not always reflect the 'form' property. For example, `<sl-button>` doesn't reflect.
+        // Controls may not always reflect the 'form' property. For example, `<st-button>` doesn't reflect.
         const formId = input.form;
 
         if (formId) {
@@ -89,7 +89,7 @@ export class FormControlController implements ReactiveController {
       reportValidity: input => (typeof input.reportValidity === 'function' ? input.reportValidity() : true),
       checkValidity: input => (typeof input.checkValidity === 'function' ? input.checkValidity() : true),
       setValue: (input, value: string) => (input.value = value),
-      assumeInteractionOn: ['sl-input'],
+      assumeInteractionOn: ['st-input'],
       ...options
     };
   }
@@ -214,7 +214,7 @@ export class FormControlController implements ReactiveController {
 
     // For buttons, we only submit the value if they were the submitter. This is currently done in doAction() by
     // injecting the name/value on a temporary button, so we can just skip them here.
-    const isButton = this.host.tagName.toLowerCase() === 'sl-button';
+    const isButton = this.host.tagName.toLowerCase() === 'st-button';
 
     if (
       this.host.isConnected &&
@@ -338,7 +338,7 @@ export class FormControlController implements ReactiveController {
     el.requestUpdate();
   }
 
-  private doAction(type: 'submit' | 'reset', submitter?: HTMLInputElement | SlButton) {
+  private doAction(type: 'submit' | 'reset', submitter?: HTMLInputElement | StButton) {
     if (this.form) {
       const button = document.createElement('button');
       button.type = type;
@@ -373,12 +373,12 @@ export class FormControlController implements ReactiveController {
   }
 
   /** Resets the form, restoring all the control to their default value */
-  reset(submitter?: HTMLInputElement | SlButton) {
+  reset(submitter?: HTMLInputElement | StButton) {
     this.doAction('reset', submitter);
   }
 
   /** Submits the form, triggering validation and form data injection. */
-  submit(submitter?: HTMLInputElement | SlButton) {
+  submit(submitter?: HTMLInputElement | StButton) {
     // Calling form.submit() bypasses the submit event and constraint validation. To prevent this, we can inject a
     // native submit button into the form, "click" it, then remove it to simulate a standard form submission.
     this.doAction('submit', submitter);
@@ -417,14 +417,14 @@ export class FormControlController implements ReactiveController {
   }
 
   /**
-   * Dispatches a non-bubbling, cancelable custom event of type `sl-invalid`.
-   * If the `sl-invalid` event will be cancelled then the original `invalid`
+   * Dispatches a non-bubbling, cancelable custom event of type `st-invalid`.
+   * If the `st-invalid` event will be cancelled then the original `invalid`
    * event (which may have been passed as argument) will also be cancelled.
-   * If no original `invalid` event has been passed then the `sl-invalid`
+   * If no original `invalid` event has been passed then the `st-invalid`
    * event will be cancelled before being dispatched.
    */
   emitInvalidEvent(originalInvalidEvent?: Event) {
-    const slInvalidEvent = new CustomEvent<Record<PropertyKey, never>>('sl-invalid', {
+    const slInvalidEvent = new CustomEvent<Record<PropertyKey, never>>('st-invalid', {
       bubbles: false,
       composed: false,
       cancelable: true,

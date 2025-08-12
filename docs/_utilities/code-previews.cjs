@@ -68,7 +68,7 @@ module.exports = function (doc, options) {
         <div class="code-preview__preview">
           ${code.textContent}
           <div class="code-preview__resizer">
-            <sl-icon name="grip-vertical"></sl-icon>
+            <st-icon name="grip-vertical"></st-icon>
           </div>
         </div>
 
@@ -77,15 +77,14 @@ module.exports = function (doc, options) {
             <pre><code class="language-html">${escapeHtml(code.textContent)}</code></pre>
           </div>
 
-          ${
-            reactCode
-              ? `
+          ${reactCode
+        ? `
             <div class="code-preview__source code-preview__source--react" data-flavor="react">
               <pre><code class="language-jsx">${escapeHtml(reactCode.textContent)}</code></pre>
             </div>
           `
-              : ''
-          }
+        : ''
+      }
         </div>
 
         <div class="code-preview__buttons">

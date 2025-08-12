@@ -81,7 +81,7 @@ import { SlDrawer } from '@shoelace-style/shoelace';
 
 @Component({
   selector: 'app-drawer-example',
-  template: '<div id="page"><button (click)="showDrawer()">Show drawer</button><sl-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"><p>Drawer content</p></sl-drawer></div>'
+  template: '<div id="page"><button (click)="showDrawer()">Show drawer</button><st-drawer #drawer label="Drawer" class="drawer-focus" style="--size: 50vw"><p>Drawer content</p></st-drawer></div>'
 })
 export class DrawerExampleComponent implements OnInit {
 

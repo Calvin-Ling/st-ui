@@ -14,24 +14,24 @@ Shoelace makes use of several design tokens to provide a consistent appearance a
 
 Design tokens offer a high-level way to customize the library with minimal effort. There are no component-specific variables, however, as design tokens are intended to be generic and highly reusable. To customize an individual component, refer to the section entitled [CSS Parts](#css-parts).
 
-Design tokens are accessed through CSS custom properties that are defined in your theme. Because design tokens live at the page level, they're prefixed with `--sl-` to avoid collisions with other libraries.
+Design tokens are accessed through CSS custom properties that are defined in your theme. Because design tokens live at the page level, they're prefixed with `--st-` to avoid collisions with other libraries.
 
 To customize a design token, simply override it in your stylesheet using a `:root` block. Here's an example that changes the primary theme to purple based on existing [color primitives](/tokens/color#primitives).
 
 ```css
 :root {
   /* Changes the primary theme color to purple using primitives */
-  --sl-color-primary-50: var(--sl-color-purple-50);
-  --sl-color-primary-100: var(--sl-color-purple-100);
-  --sl-color-primary-200: var(--sl-color-purple-200);
-  --sl-color-primary-300: var(--sl-color-purple-300);
-  --sl-color-primary-400: var(--sl-color-purple-400);
-  --sl-color-primary-500: var(--sl-color-purple-500);
-  --sl-color-primary-600: var(--sl-color-purple-600);
-  --sl-color-primary-700: var(--sl-color-purple-700);
-  --sl-color-primary-800: var(--sl-color-purple-800);
-  --sl-color-primary-900: var(--sl-color-purple-900);
-  --sl-color-primary-950: var(--sl-color-purple-950);
+  --st-color-primary-50: var(--st-color-purple-50);
+  --st-color-primary-100: var(--st-color-purple-100);
+  --st-color-primary-200: var(--st-color-purple-200);
+  --st-color-primary-300: var(--st-color-purple-300);
+  --st-color-primary-400: var(--st-color-purple-400);
+  --st-color-primary-500: var(--st-color-purple-500);
+  --st-color-primary-600: var(--st-color-purple-600);
+  --st-color-primary-700: var(--st-color-purple-700);
+  --st-color-primary-800: var(--st-color-purple-800);
+  --st-color-primary-900: var(--st-color-purple-900);
+  --st-color-primary-950: var(--st-color-purple-950);
 }
 ```
 
@@ -46,11 +46,11 @@ Shoelace components use a [shadow DOM](https://developer.mozilla.org/en-US/docs/
 Here's an example that modifies buttons with the `tomato-button` class.
 
 ```html:preview
-<sl-button class="tomato-button"> Tomato Button </sl-button>
+<st-button class="tomato-button"> Tomato Button </st-button>
 
 <style>
   .tomato-button::part(base) {
-    background: var(--sl-color-neutral-0);
+    background: var(--st-color-neutral-0);
     border: solid 1px tomato;
   }
 
@@ -84,12 +84,12 @@ Most (but not all) components expose parts. You can find them in each component'
 
 ## Custom Properties
 
-For convenience, some components expose CSS custom properties you can override. These are not design tokens, nor do they have the same `--sl-` prefix since they're scoped to a component.
+For convenience, some components expose CSS custom properties you can override. These are not design tokens, nor do they have the same `--st-` prefix since they're scoped to a component.
 
 You can set custom properties on a component in your stylesheet.
 
 ```css
-sl-avatar {
+st-avatar {
   --size: 6rem;
 }
 ```
@@ -97,7 +97,7 @@ sl-avatar {
 This will also work if you need to target a subset of components with a specific class.
 
 ```css
-sl-avatar.your-class {
+st-avatar.your-class {
   --size: 6rem;
 }
 ```
@@ -105,7 +105,7 @@ sl-avatar.your-class {
 Alternatively, you can set them inline directly on the element.
 
 ```html
-<sl-avatar style="--size: 6rem;"></sl-avatar>
+<st-avatar style="--size: 6rem;"></st-avatar>
 ```
 
 Not all components expose CSS custom properties. For those that do, they can be found in the component's API documentation.

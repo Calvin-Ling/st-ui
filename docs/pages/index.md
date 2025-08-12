@@ -9,7 +9,7 @@ toc: false
 <div class="splash-start">
 <img class="splash-logo" src="/assets/images/wordmark.svg" alt="Shoelace">
 
-# <sl-visually-hidden>Shoelace:</sl-visually-hidden> A forward-thinking library of web components.
+# <st-visually-hidden>Shoelace:</st-visually-hidden> A forward-thinking library of web components.
 
 - Works with all frameworks 🧩
 - Works with CDNs 🚛
@@ -51,7 +51,7 @@ Add the following code to your page.
 Now you have access to all of Shoelace's components! Try adding a button:
 
 ```html:preview:expanded:no-codepen
-<sl-button>Click me</sl-button>
+<st-button>Click me</st-button>
 ```
 
 :::tip

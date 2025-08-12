@@ -8,36 +8,36 @@ import styles from './{{ tagWithoutPrefix tag }}.styles.js';
 import type { CSSResultGroup } from 'lit';
 
 /**
- * @summary Short summary of the component's intended use.
- * @documentation https://shoelace.style/components/{{ tagWithoutPrefix tag }}
- * @status experimental
- * @since 2.0
- *
- * @dependency sl-example
- *
- * @event sl-event-name - Emitted as an example.
- *
- * @slot - The default slot.
- * @slot example - An example slot.
- *
- * @csspart base - The component's base wrapper.
- *
- * @cssproperty --example - An example CSS custom property.
- */
+* @summary Short summary of the component's intended use.
+* @documentation https://shoelace.style/components/{{ tagWithoutPrefix tag }}
+* @status experimental
+* @since 2.0
+*
+* @dependency st-example
+*
+* @event st-event-name - Emitted as an example.
+*
+* @slot - The default slot.
+* @slot example - An example slot.
+*
+* @csspart base - The component's base wrapper.
+*
+* @cssproperty --example - An example CSS custom property.
+*/
 export default class {{ properCase tag }} extends ShoelaceElement {
-    static styles: CSSResultGroup = [componentStyles, styles];
+static styles: CSSResultGroup = [componentStyles, styles];
 
-  private readonly localize = new LocalizeController(this);
+private readonly localize = new LocalizeController(this);
 
-  /** An example attribute. */
-  @property() attr = 'example';
+/** An example attribute. */
+@property() attr = 'example';
 
-  @watch('example')
-  handleExampleChange() {
-    // do something
-  }
+@watch('example')
+handleExampleChange() {
+// do something
+}
 
-  render() {
-    return html` <slot></slot> `;
-  }
+render() {
+return html` <slot></slot> `;
+}
 }

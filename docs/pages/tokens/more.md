@@ -16,25 +16,25 @@ Currently, the source of design tokens is considered to be [`light.css`](https:/
 
 ## Focus Rings
 
-Focus ring tokens control the appearance of focus rings. Note that form inputs use `--sl-input-focus-ring-*` tokens instead.
+Focus ring tokens control the appearance of focus rings. Note that form inputs use `--st-input-focus-ring-*` tokens instead.
 
 | Token                    | Value                                                                                     |
 | ------------------------ | ----------------------------------------------------------------------------------------- |
-| `--sl-focus-ring-color`  | `var(--sl-color-primary-600)` (light theme)<br>`var(--sl-color-primary-700)` (dark theme) |
-| `--sl-focus-ring-style`  | `solid`                                                                                   |
-| `--sl-focus-ring-width`  | `3px`                                                                                     |
-| `--sl-focus-ring`        | `var(--sl-focus-ring-style) var(--sl-focus-ring-width) var(--sl-focus-ring-color)`        |
-| `--sl-focus-ring-offset` | `1px`                                                                                     |
+| `--st-focus-ring-color`  | `var(--st-color-primary-600)` (light theme)<br>`var(--st-color-primary-700)` (dark theme) |
+| `--st-focus-ring-style`  | `solid`                                                                                   |
+| `--st-focus-ring-width`  | `3px`                                                                                     |
+| `--st-focus-ring`        | `var(--st-focus-ring-style) var(--st-focus-ring-width) var(--st-focus-ring-color)`        |
+| `--st-focus-ring-offset` | `1px`                                                                                     |
 
 ## Buttons
 
-Button tokens control the appearance of buttons. In addition, buttons also currently use some form input tokens such as `--sl-input-height-*` and `--sl-input-border-*`. More button tokens may be added in the future to make it easier to style them more independently.
+Button tokens control the appearance of buttons. In addition, buttons also currently use some form input tokens such as `--st-input-height-*` and `--st-input-border-*`. More button tokens may be added in the future to make it easier to style them more independently.
 
 | Token                          | Value                         |
 | ------------------------------ | ----------------------------- |
-| `--sl-button-font-size-small`  | `var(--sl-font-size-x-small)` |
-| `--sl-button-font-size-medium` | `var(--sl-font-size-small)`   |
-| `--sl-button-font-size-large`  | `var(--sl-font-size-medium)`  |
+| `--st-button-font-size-small`  | `var(--st-font-size-x-small)` |
+| `--st-button-font-size-medium` | `var(--st-font-size-small)`   |
+| `--st-button-font-size-large`  | `var(--st-font-size-medium)`  |
 
 ## Form Inputs
 
@@ -42,44 +42,44 @@ Form input tokens control the appearance of form controls such as [input](/compo
 
 | Token                                   | Value                              |
 | --------------------------------------- | ---------------------------------- |
-| `--sl-input-height-small`               | `1.875rem` (30px @ 16px base)      |
-| `--sl-input-height-medium`              | `2.5rem` (40px @ 16px base)        |
-| `--sl-input-height-large`               | `3.125rem` (50px @ 16px base)      |
-| `--sl-input-background-color`           | `var(--sl-color-neutral-0)`        |
-| `--sl-input-background-color-hover`     | `var(--sl-input-background-color)` |
-| `--sl-input-background-color-focus`     | `var(--sl-input-background-color)` |
-| `--sl-input-background-color-disabled`  | `var(--sl-color-neutral-100)`      |
-| `--sl-input-border-color`               | `var(--sl-color-neutral-300)`      |
-| `--sl-input-border-color-hover`         | `var(--sl-color-neutral-400)`      |
-| `--sl-input-border-color-focus`         | `var(--sl-color-primary-500)`      |
-| `--sl-input-border-color-disabled`      | `var(--sl-color-neutral-300)`      |
-| `--sl-input-border-width`               | `1px`                              |
-| `--sl-input-required-content`           | `*`                                |
-| `--sl-input-required-content-offset`    | `-2px`                             |
-| `--sl-input-required-content-color`     | `var(--sl-input-label-color)`      |
-| `--sl-input-border-radius-small`        | `var(--sl-border-radius-medium)`   |
-| `--sl-input-border-radius-medium`       | `var(--sl-border-radius-medium)`   |
-| `--sl-input-border-radius-large`        | `var(--sl-border-radius-medium)`   |
-| `--sl-input-font-family`                | `var(--sl-font-sans)`              |
-| `--sl-input-font-weight`                | `var(--sl-font-weight-normal)`     |
-| `--sl-input-font-size-small`            | `var(--sl-font-size-small)`        |
-| `--sl-input-font-size-medium`           | `var(--sl-font-size-medium)`       |
-| `--sl-input-font-size-large`            | `var(--sl-font-size-large)`        |
-| `--sl-input-letter-spacing`             | `var(--sl-letter-spacing-normal)`  |
-| `--sl-input-color`                      | `var(--sl-color-neutral-700)`      |
-| `--sl-input-color-hover`                | `var(--sl-color-neutral-700)`      |
-| `--sl-input-color-focus`                | `var(--sl-color-neutral-700)`      |
-| `--sl-input-color-disabled`             | `var(--sl-color-neutral-900)`      |
-| `--sl-input-icon-color`                 | `var(--sl-color-neutral-500)`      |
-| `--sl-input-icon-color-hover`           | `var(--sl-color-neutral-600)`      |
-| `--sl-input-icon-color-focus`           | `var(--sl-color-neutral-600)`      |
-| `--sl-input-placeholder-color`          | `var(--sl-color-neutral-500)`      |
-| `--sl-input-placeholder-color-disabled` | `var(--sl-color-neutral-600)`      |
-| `--sl-input-spacing-small`              | `var(--sl-spacing-small)`          |
-| `--sl-input-spacing-medium`             | `var(--sl-spacing-medium)`         |
-| `--sl-input-spacing-large`              | `var(--sl-spacing-large)`          |
-| `--sl-input-focus-ring-color`           | `hsl(198.6 88.7% 48.4% / 40%)`     |
-| `--sl-input-focus-ring-offset`          | `0`                                |
+| `--st-input-height-small`               | `1.875rem` (30px @ 16px base)      |
+| `--st-input-height-medium`              | `2.5rem` (40px @ 16px base)        |
+| `--st-input-height-large`               | `3.125rem` (50px @ 16px base)      |
+| `--st-input-background-color`           | `var(--st-color-neutral-0)`        |
+| `--st-input-background-color-hover`     | `var(--st-input-background-color)` |
+| `--st-input-background-color-focus`     | `var(--st-input-background-color)` |
+| `--st-input-background-color-disabled`  | `var(--st-color-neutral-100)`      |
+| `--st-input-border-color`               | `var(--st-color-neutral-300)`      |
+| `--st-input-border-color-hover`         | `var(--st-color-neutral-400)`      |
+| `--st-input-border-color-focus`         | `var(--st-color-primary-500)`      |
+| `--st-input-border-color-disabled`      | `var(--st-color-neutral-300)`      |
+| `--st-input-border-width`               | `1px`                              |
+| `--st-input-required-content`           | `*`                                |
+| `--st-input-required-content-offset`    | `-2px`                             |
+| `--st-input-required-content-color`     | `var(--st-input-label-color)`      |
+| `--st-input-border-radius-small`        | `var(--st-border-radius-medium)`   |
+| `--st-input-border-radius-medium`       | `var(--st-border-radius-medium)`   |
+| `--st-input-border-radius-large`        | `var(--st-border-radius-medium)`   |
+| `--st-input-font-family`                | `var(--st-font-sans)`              |
+| `--st-input-font-weight`                | `var(--st-font-weight-normal)`     |
+| `--st-input-font-size-small`            | `var(--st-font-size-small)`        |
+| `--st-input-font-size-medium`           | `var(--st-font-size-medium)`       |
+| `--st-input-font-size-large`            | `var(--st-font-size-large)`        |
+| `--st-input-letter-spacing`             | `var(--st-letter-spacing-normal)`  |
+| `--st-input-color`                      | `var(--st-color-neutral-700)`      |
+| `--st-input-color-hover`                | `var(--st-color-neutral-700)`      |
+| `--st-input-color-focus`                | `var(--st-color-neutral-700)`      |
+| `--st-input-color-disabled`             | `var(--st-color-neutral-900)`      |
+| `--st-input-icon-color`                 | `var(--st-color-neutral-500)`      |
+| `--st-input-icon-color-hover`           | `var(--st-color-neutral-600)`      |
+| `--st-input-icon-color-focus`           | `var(--st-color-neutral-600)`      |
+| `--st-input-placeholder-color`          | `var(--st-color-neutral-500)`      |
+| `--st-input-placeholder-color-disabled` | `var(--st-color-neutral-600)`      |
+| `--st-input-spacing-small`              | `var(--st-spacing-small)`          |
+| `--st-input-spacing-medium`             | `var(--st-spacing-medium)`         |
+| `--st-input-spacing-large`              | `var(--st-spacing-large)`          |
+| `--st-input-focus-ring-color`           | `hsl(198.6 88.7% 48.4% / 40%)`     |
+| `--st-input-focus-ring-offset`          | `0`                                |
 
 ## Filled Form Inputs
 
@@ -87,14 +87,14 @@ Filled form input tokens control the appearance of form controls using the `fill
 
 | Token                                         | Value                         |
 | --------------------------------------------- | ----------------------------- |
-| `--sl-input-filled-background-color`          | `var(--sl-color-neutral-100)` |
-| `--sl-input-filled-background-color-hover`    | `var(--sl-color-neutral-100)` |
-| `--sl-input-filled-background-color-focus`    | `var(--sl-color-neutral-100)` |
-| `--sl-input-filled-background-color-disabled` | `var(--sl-color-neutral-100)` |
-| `--sl-input-filled-color`                     | `var(--sl-color-neutral-800)` |
-| `--sl-input-filled-color-hover`               | `var(--sl-color-neutral-800)` |
-| `--sl-input-filled-color-focus`               | `var(--sl-color-neutral-700)` |
-| `--sl-input-filled-color-disabled`            | `var(--sl-color-neutral-800)` |
+| `--st-input-filled-background-color`          | `var(--st-color-neutral-100)` |
+| `--st-input-filled-background-color-hover`    | `var(--st-color-neutral-100)` |
+| `--st-input-filled-background-color-focus`    | `var(--st-color-neutral-100)` |
+| `--st-input-filled-background-color-disabled` | `var(--st-color-neutral-100)` |
+| `--st-input-filled-color`                     | `var(--st-color-neutral-800)` |
+| `--st-input-filled-color-hover`               | `var(--st-color-neutral-800)` |
+| `--st-input-filled-color-focus`               | `var(--st-color-neutral-700)` |
+| `--st-input-filled-color-disabled`            | `var(--st-color-neutral-800)` |
 
 ## Form Labels
 
@@ -102,10 +102,10 @@ Form label tokens control the appearance of labels in form controls.
 
 | Token                               | Value                        |
 | ----------------------------------- | ---------------------------- |
-| `--sl-input-label-font-size-small`  | `var(--sl-font-size-small)`  |
-| `--sl-input-label-font-size-medium` | `var(--sl-font-size-medium`) |
-| `--sl-input-label-font-size-large`  | `var(--sl-font-size-large)`  |
-| `--sl-input-label-color`            | `inherit`                    |
+| `--st-input-label-font-size-small`  | `var(--st-font-size-small)`  |
+| `--st-input-label-font-size-medium` | `var(--st-font-size-medium`) |
+| `--st-input-label-font-size-large`  | `var(--st-font-size-large)`  |
+| `--st-input-label-color`            | `inherit`                    |
 
 ## Help Text
 
@@ -113,10 +113,10 @@ Help text tokens control the appearance of help text in form controls.
 
 | Token                                   | Value                         |
 | --------------------------------------- | ----------------------------- |
-| `--sl-input-help-text-font-size-small`  | `var(--sl-font-size-x-small)` |
-| `--sl-input-help-text-font-size-medium` | `var(--sl-font-size-small)`   |
-| `--sl-input-help-text-font-size-large`  | `var(--sl-font-size-medium)`  |
-| `--sl-input-help-text-color`            | `var(--sl-color-neutral-500)` |
+| `--st-input-help-text-font-size-small`  | `var(--st-font-size-x-small)` |
+| `--st-input-help-text-font-size-medium` | `var(--st-font-size-small)`   |
+| `--st-input-help-text-font-size-large`  | `var(--st-font-size-medium)`  |
+| `--st-input-help-text-color`            | `var(--st-color-neutral-500)` |
 
 ## Toggles
 
@@ -124,9 +124,9 @@ Toggle tokens control the appearance of toggles such as [checkbox](/components/c
 
 | Token                     | Value                         |
 | ------------------------- | ----------------------------- |
-| `--sl-toggle-size-small`  | `0.875rem` (14px @ 16px base) |
-| `--sl-toggle-size-medium` | `1.125rem` (18px @ 16px base) |
-| `--sl-toggle-size-large`  | `1.375rem` (22px @ 16px base) |
+| `--st-toggle-size-small`  | `0.875rem` (14px @ 16px base) |
+| `--st-toggle-size-medium` | `1.125rem` (18px @ 16px base) |
+| `--st-toggle-size-large`  | `1.375rem` (22px @ 16px base) |
 
 ## Overlays
 
@@ -134,7 +134,7 @@ Overlay tokens control the appearance of overlays as used in [dialog](/component
 
 | Token                           | Value                       |
 | ------------------------------- | --------------------------- |
-| `--sl-overlay-background-color` | `hsl(240 3.8% 46.1% / 33%)` |
+| `--st-overlay-background-color` | `hsl(240 3.8% 46.1% / 33%)` |
 
 ## Panels
 
@@ -142,9 +142,9 @@ Panel tokens control the appearance of panels such as those used in [dialog](/co
 
 | Token                         | Value                         |
 | ----------------------------- | ----------------------------- |
-| `--sl-panel-background-color` | `var(--sl-color-neutral-0)`   |
-| `--sl-panel-border-color`     | `var(--sl-color-neutral-200)` |
-| `--sl-panel-border-width`     | `1px`                         |
+| `--st-panel-background-color` | `var(--st-color-neutral-0)`   |
+| `--st-panel-border-color`     | `var(--st-color-neutral-200)` |
+| `--st-panel-border-width`     | `1px`                         |
 
 ## Tooltips
 
@@ -152,12 +152,12 @@ Tooltip tokens control the appearance of tooltips. This includes the [tooltip](/
 
 | Token                           | Value                                                  |
 | ------------------------------- | ------------------------------------------------------ |
-| `--sl-tooltip-border-radius`    | `var(--sl-border-radius-medium)`                       |
-| `--sl-tooltip-background-color` | `var(--sl-color-neutral-800)`                          |
-| `--sl-tooltip-color`            | `var(--sl-color-neutral-0)`                            |
-| `--sl-tooltip-font-family`      | `var(--sl-font-sans)`                                  |
-| `--sl-tooltip-font-weight`      | `var(--sl-font-weight-normal)`                         |
-| `--sl-tooltip-font-size`        | `var(--sl-font-size-small)`                            |
-| `--sl-tooltip-line-height`      | `var(--sl-line-height-dense)`                          |
-| `--sl-tooltip-padding`          | `var(--sl-spacing-2x-small) var(--sl-spacing-x-small)` |
-| `--sl-tooltip-arrow-size`       | `6px`                                                  |
+| `--st-tooltip-border-radius`    | `var(--st-border-radius-medium)`                       |
+| `--st-tooltip-background-color` | `var(--st-color-neutral-800)`                          |
+| `--st-tooltip-color`            | `var(--st-color-neutral-0)`                            |
+| `--st-tooltip-font-family`      | `var(--st-font-sans)`                                  |
+| `--st-tooltip-font-weight`      | `var(--st-font-weight-normal)`                         |
+| `--st-tooltip-font-size`        | `var(--st-font-size-small)`                            |
+| `--st-tooltip-line-height`      | `var(--st-line-height-dense)`                          |
+| `--st-tooltip-padding`          | `var(--st-spacing-2x-small) var(--st-spacing-x-small)` |
+| `--st-tooltip-arrow-size`       | `6px`                                                  |

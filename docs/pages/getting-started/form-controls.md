@@ -56,26 +56,26 @@ Client-side validation can be used to improve the UX of forms, but it is not a r
 
 ### Required Fields
 
-To make a field required, use the `required` attribute. Required fields will automatically receive a `*` after their labels. This is configurable through the `--sl-input-required-content` custom property.
+To make a field required, use the `required` attribute. Required fields will automatically receive a `*` after their labels. This is configurable through the `--st-input-required-content` custom property.
 
 The form will not be submitted if a required field is incomplete.
 
 ```html:preview
 <form class="input-validation-required">
-  <sl-input name="name" label="Name" required></sl-input>
+  <st-input name="name" label="Name" required></st-input>
   <br />
-  <sl-select label="Favorite Animal" clearable required>
-    <sl-option value="birds">Birds</sl-option>
-    <sl-option value="cats">Cats</sl-option>
-    <sl-option value="dogs">Dogs</sl-option>
-    <sl-option value="other">Other</sl-option>
-  </sl-select>
+  <st-select label="Favorite Animal" clearable required>
+    <st-option value="birds">Birds</st-option>
+    <st-option value="cats">Cats</st-option>
+    <st-option value="dogs">Dogs</st-option>
+    <st-option value="other">Other</st-option>
+  </st-select>
   <br />
-  <sl-textarea name="comment" label="Comment" required></sl-textarea>
+  <st-textarea name="comment" label="Comment" required></st-textarea>
   <br />
-  <sl-checkbox required>Check me before submitting</sl-checkbox>
+  <st-checkbox required>Check me before submitting</st-checkbox>
   <br /><br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
+  <st-button type="submit" variant="primary">Submit</st-button>
 </form>
 
 <script type="module">
@@ -83,12 +83,12 @@ The form will not be submitted if a required field is incomplete.
 
   // Wait for controls to be defined before attaching form listeners
   await Promise.all([
-    customElements.whenDefined('sl-button'),
-    customElements.whenDefined('sl-checkbox'),
-    customElements.whenDefined('sl-input'),
-    customElements.whenDefined('sl-option'),
-    customElements.whenDefined('sl-select'),
-    customElements.whenDefined('sl-textarea')
+    customElements.whenDefined('st-button'),
+    customElements.whenDefined('st-checkbox'),
+    customElements.whenDefined('st-input'),
+    customElements.whenDefined('st-option'),
+    customElements.whenDefined('st-select'),
+    customElements.whenDefined('st-textarea')
   ]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -99,10 +99,10 @@ The form will not be submitted if a required field is incomplete.
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
-import SlCheckbox from '@shoelace-style/shoelace/dist/react/checkbox';
-import SlInput from '@shoelace-style/shoelace/dist/react/input';
-import SlMenuItem from '@shoelace-style/shoelace/dist/react/menu-item';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
+import StCheckbox from '@shoelace-style/shoelace/dist/react/checkbox';
+import StInput from '@shoelace-style/shoelace/dist/react/input';
+import StMenuItem from '@shoelace-style/shoelace/dist/react/menu-item';
 import SlSelect from '@shoelace-style/shoelace/dist/react/select';
 import SlTextarea from '@shoelace-style/shoelace/dist/react/textarea';
 
@@ -114,23 +114,23 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput name="name" label="Name" required />
+      <StInput name="name" label="Name" required />
       <br />
       <SlSelect label="Favorite Animal" clearable required>
-        <SlMenuItem value="birds">Birds</SlMenuItem>
-        <SlMenuItem value="cats">Cats</SlMenuItem>
-        <SlMenuItem value="dogs">Dogs</SlMenuItem>
-        <SlMenuItem value="other">Other</SlMenuItem>
+        <StMenuItem value="birds">Birds</StMenuItem>
+        <StMenuItem value="cats">Cats</StMenuItem>
+        <StMenuItem value="dogs">Dogs</StMenuItem>
+        <StMenuItem value="other">Other</StMenuItem>
       </SlSelect>
       <br />
       <SlTextarea name="comment" label="Comment" required></SlTextarea>
       <br />
-      <SlCheckbox required>Check me before submitting</SlCheckbox>
+      <StCheckbox required>Check me before submitting</StCheckbox>
       <br />
       <br />
-      <SlButton type="submit" variant="primary">
+      <StButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </StButton>
     </form>
   );
 };
@@ -138,14 +138,14 @@ const App = () => {
 
 ### Input Patterns
 
-To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with `<sl-input>` elements.
+To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern), use the `pattern` attribute. This example only allows the letters A-Z, so the form will not submit if a number or symbol is entered. This only works with `<st-input>` elements.
 
 ```html:preview
 <form class="input-validation-pattern">
-  <sl-input name="letters" required label="Letters" pattern="[A-Za-z]+"></sl-input>
+  <st-input name="letters" required label="Letters" pattern="[A-Za-z]+"></st-input>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <st-button type="submit" variant="primary">Submit</st-button>
+  <st-button type="reset" variant="default">Reset</st-button>
 </form>
 
 <script type="module">
@@ -153,8 +153,8 @@ To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/
 
   // Wait for controls to be defined before attaching form listeners
   await Promise.all([
-    customElements.whenDefined('sl-button'),
-    customElements.whenDefined('sl-input')
+    customElements.whenDefined('st-button'),
+    customElements.whenDefined('st-input')
   ]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -165,8 +165,8 @@ To restrict a value to a specific [pattern](https://developer.mozilla.org/en-US/
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
-import SlInput from '@shoelace-style/shoelace/dist/react/input';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
+import StInput from '@shoelace-style/shoelace/dist/react/input';
 
 const App = () => {
   function handleSubmit(event) {
@@ -176,11 +176,11 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput name="letters" required label="Letters" pattern="[A-Za-z]+" />
+      <StInput name="letters" required label="Letters" pattern="[A-Za-z]+" />
       <br />
-      <SlButton type="submit" variant="primary">
+      <StButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </StButton>
     </form>
   );
 };
@@ -192,12 +192,12 @@ Some input types will automatically trigger constraints, such as `email` and `ur
 
 ```html:preview
 <form class="input-validation-type">
-  <sl-input type="email" label="Email" placeholder="you@example.com" required></sl-input>
+  <st-input type="email" label="Email" placeholder="you@example.com" required></st-input>
   <br />
-  <sl-input type="url" label="URL" placeholder="https://example.com/" required></sl-input>
+  <st-input type="url" label="URL" placeholder="https://example.com/" required></st-input>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <st-button type="submit" variant="primary">Submit</st-button>
+  <st-button type="reset" variant="default">Reset</st-button>
 </form>
 
 <script type="module">
@@ -205,8 +205,8 @@ Some input types will automatically trigger constraints, such as `email` and `ur
 
   // Wait for controls to be defined before attaching form listeners
   await Promise.all([
-    customElements.whenDefined('sl-button'),
-    customElements.whenDefined('sl-input')
+    customElements.whenDefined('st-button'),
+    customElements.whenDefined('st-input')
   ]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -217,8 +217,8 @@ Some input types will automatically trigger constraints, such as `email` and `ur
 ```
 
 ```jsx:react
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
-import SlInput from '@shoelace-style/shoelace/dist/react/input';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
+import StInput from '@shoelace-style/shoelace/dist/react/input';
 
 const App = () => {
   function handleSubmit(event) {
@@ -228,13 +228,13 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput type="email" label="Email" placeholder="you@example.com" required />
+      <StInput type="email" label="Email" placeholder="you@example.com" required />
       <br />
-      <SlInput type="url" label="URL" placeholder="https://example.com/" required />
+      <StInput type="url" label="URL" placeholder="https://example.com/" required />
       <br />
-      <SlButton type="submit" variant="primary">
+      <StButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </StButton>
     </form>
   );
 };
@@ -246,27 +246,27 @@ To create a custom validation error, pass a non-empty string to the `setCustomVa
 
 ```html:preview
 <form class="input-validation-custom">
-  <sl-input label="Type “shoelace”" required></sl-input>
+  <st-input label="Type “shoelace”" required></st-input>
   <br />
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <st-button type="submit" variant="primary">Submit</st-button>
+  <st-button type="reset" variant="default">Reset</st-button>
 </form>
 
 <script type="module">
   const form = document.querySelector('.input-validation-custom');
-  const input = form.querySelector('sl-input');
+  const input = form.querySelector('st-input');
 
   // Wait for controls to be defined before attaching form listeners
   await Promise.all([
-    customElements.whenDefined('sl-button'),
-    customElements.whenDefined('sl-input')
+    customElements.whenDefined('st-button'),
+    customElements.whenDefined('st-input')
   ]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
       alert('All fields are valid!');
     });
 
-    input.addEventListener('sl-input', () => {
+    input.addEventListener('st-input', () => {
       if (input.value === 'shoelace') {
         input.setCustomValidity('');
       } else {
@@ -279,8 +279,8 @@ To create a custom validation error, pass a non-empty string to the `setCustomVa
 
 ```jsx:react
 import { useRef, useState } from 'react';
-import SlButton from '@shoelace-style/shoelace/dist/react/button';
-import SlInput from '@shoelace-style/shoelace/dist/react/input';
+import StButton from '@shoelace-style/shoelace/dist/react/button';
+import StInput from '@shoelace-style/shoelace/dist/react/input';
 
 const App = () => {
   const input = useRef(null);
@@ -303,11 +303,11 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <SlInput ref={input} label="Type 'shoelace'" required value={value} onSlInput={handleInput} />
+      <StInput ref={input} label="Type 'shoelace'" required value={value} onSlInput={handleInput} />
       <br />
-      <SlButton type="submit" variant="primary">
+      <StButton type="submit" variant="primary">
         Submit
-      </SlButton>
+      </StButton>
     </form>
   );
 };
@@ -342,25 +342,25 @@ This example demonstrates custom validation styles using `data-user-invalid` and
 
 ```html:preview
 <form class="validity-styles">
-  <sl-input
+  <st-input
     name="name"
     label="Name"
     help-text="What would you like people to call you?"
     autocomplete="off"
     required
-  ></sl-input>
+  ></st-input>
 
-  <sl-select name="animal" label="Favorite Animal" help-text="Select the best option." clearable required>
-    <sl-option value="birds">Birds</sl-option>
-    <sl-option value="cats">Cats</sl-option>
-    <sl-option value="dogs">Dogs</sl-option>
-    <sl-option value="other">Other</sl-option>
-  </sl-select>
+  <st-select name="animal" label="Favorite Animal" help-text="Select the best option." clearable required>
+    <st-option value="birds">Birds</st-option>
+    <st-option value="cats">Cats</st-option>
+    <st-option value="dogs">Dogs</st-option>
+    <st-option value="other">Other</st-option>
+  </st-select>
 
-  <sl-checkbox value="accept" required>Accept terms and conditions</sl-checkbox>
+  <st-checkbox value="accept" required>Accept terms and conditions</st-checkbox>
 
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <st-button type="submit" variant="primary">Submit</st-button>
+  <st-button type="reset" variant="default">Reset</st-button>
 </form>
 
 <script type="module">
@@ -368,11 +368,11 @@ This example demonstrates custom validation styles using `data-user-invalid` and
 
   // Wait for controls to be defined before attaching form listeners
   await Promise.all([
-    customElements.whenDefined('sl-button'),
-    customElements.whenDefined('sl-checkbox'),
-    customElements.whenDefined('sl-input'),
-    customElements.whenDefined('sl-option'),
-    customElements.whenDefined('sl-select')
+    customElements.whenDefined('st-button'),
+    customElements.whenDefined('st-checkbox'),
+    customElements.whenDefined('st-input'),
+    customElements.whenDefined('st-option'),
+    customElements.whenDefined('st-select')
   ]).then(() => {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -382,60 +382,60 @@ This example demonstrates custom validation styles using `data-user-invalid` and
 </script>
 
 <style>
-  .validity-styles sl-input,
-  .validity-styles sl-select,
-  .validity-styles sl-checkbox {
+  .validity-styles st-input,
+  .validity-styles st-select,
+  .validity-styles st-checkbox {
     display: block;
-    margin-bottom: var(--sl-spacing-medium);
+    margin-bottom: var(--st-spacing-medium);
   }
 
   /* user invalid styles */
-  .validity-styles sl-input[data-user-invalid]::part(base),
-  .validity-styles sl-select[data-user-invalid]::part(combobox),
-  .validity-styles sl-checkbox[data-user-invalid]::part(control) {
-    border-color: var(--sl-color-danger-600);
+  .validity-styles st-input[data-user-invalid]::part(base),
+  .validity-styles st-select[data-user-invalid]::part(combobox),
+  .validity-styles st-checkbox[data-user-invalid]::part(control) {
+    border-color: var(--st-color-danger-600);
   }
 
   .validity-styles [data-user-invalid]::part(form-control-label),
   .validity-styles [data-user-invalid]::part(form-control-help-text),
-  .validity-styles sl-checkbox[data-user-invalid]::part(label) {
-    color: var(--sl-color-danger-700);
+  .validity-styles st-checkbox[data-user-invalid]::part(label) {
+    color: var(--st-color-danger-700);
   }
 
-  .validity-styles sl-checkbox[data-user-invalid]::part(control) {
+  .validity-styles st-checkbox[data-user-invalid]::part(control) {
     outline: none;
   }
 
-  .validity-styles sl-input:focus-within[data-user-invalid]::part(base),
-  .validity-styles sl-select:focus-within[data-user-invalid]::part(combobox),
-  .validity-styles sl-checkbox:focus-within[data-user-invalid]::part(control) {
-    border-color: var(--sl-color-danger-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-danger-300);
+  .validity-styles st-input:focus-within[data-user-invalid]::part(base),
+  .validity-styles st-select:focus-within[data-user-invalid]::part(combobox),
+  .validity-styles st-checkbox:focus-within[data-user-invalid]::part(control) {
+    border-color: var(--st-color-danger-600);
+    box-shadow: 0 0 0 var(--st-focus-ring-width) var(--st-color-danger-300);
   }
 
   /* User valid styles */
-  .validity-styles sl-input[data-user-valid]::part(base),
-  .validity-styles sl-select[data-user-valid]::part(combobox),
-  .validity-styles sl-checkbox[data-user-valid]::part(control) {
-    border-color: var(--sl-color-success-600);
+  .validity-styles st-input[data-user-valid]::part(base),
+  .validity-styles st-select[data-user-valid]::part(combobox),
+  .validity-styles st-checkbox[data-user-valid]::part(control) {
+    border-color: var(--st-color-success-600);
   }
 
   .validity-styles [data-user-valid]::part(form-control-label),
   .validity-styles [data-user-valid]::part(form-control-help-text),
-  .validity-styles sl-checkbox[data-user-valid]::part(label) {
-    color: var(--sl-color-success-700);
+  .validity-styles st-checkbox[data-user-valid]::part(label) {
+    color: var(--st-color-success-700);
   }
 
-  .validity-styles sl-checkbox[data-user-valid]::part(control) {
-    background-color: var(--sl-color-success-600);
+  .validity-styles st-checkbox[data-user-valid]::part(control) {
+    background-color: var(--st-color-success-600);
     outline: none;
   }
 
-  .validity-styles sl-input:focus-within[data-user-valid]::part(base),
-  .validity-styles sl-select:focus-within[data-user-valid]::part(combobox),
-  .validity-styles sl-checkbox:focus-within[data-user-valid]::part(control) {
-    border-color: var(--sl-color-success-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-success-300);
+  .validity-styles st-input:focus-within[data-user-valid]::part(base),
+  .validity-styles st-select:focus-within[data-user-valid]::part(combobox),
+  .validity-styles st-checkbox:focus-within[data-user-valid]::part(control) {
+    border-color: var(--st-color-success-600);
+    box-shadow: 0 0 0 var(--st-focus-ring-width) var(--st-color-success-300);
   }
 </style>
 ```
@@ -444,22 +444,22 @@ This example demonstrates custom validation styles using `data-user-invalid` and
 
 By default, Shoelace form controls use the browser's tooltip-style error messages. No mechanism is provided to show errors inline, as there are too many opinions on how that would work when combined with native form controls and other custom elements. You can, however, implement your own solution using the following technique.
 
-To disable the browser's error messages, you need to cancel the `sl-invalid` event. Then you can apply your own inline validation errors. This example demonstrates a primitive way to do this.
+To disable the browser's error messages, you need to cancel the `st-invalid` event. Then you can apply your own inline validation errors. This example demonstrates a primitive way to do this.
 
 ```html:preview
 <form class="inline-validation">
-  <sl-input
+  <st-input
     name="name"
     label="Name"
     help-text="What would you like people to call you?"
     autocomplete="off"
     required
-  ></sl-input>
+  ></st-input>
 
   <div id="name-error" aria-live="polite" hidden></div>
 
-  <sl-button type="submit" variant="primary">Submit</sl-button>
-  <sl-button type="reset" variant="default">Reset</sl-button>
+  <st-button type="submit" variant="primary">Submit</st-button>
+  <st-button type="reset" variant="default">Reset</st-button>
 </form>
 
 <script type="module">
@@ -468,12 +468,12 @@ To disable the browser's error messages, you need to cancel the `sl-invalid` eve
 
   // Wait for controls to be defined before attaching form listeners
   await Promise.all([
-    customElements.whenDefined('sl-button'),
-    customElements.whenDefined('sl-input')
+    customElements.whenDefined('st-button'),
+    customElements.whenDefined('st-input')
   ]).then(() => {
     // A form control is invalid
     form.addEventListener(
-      'sl-invalid',
+      'st-invalid',
       event => {
         // Suppress the browser's constraint validation message
         event.preventDefault();
@@ -483,7 +483,7 @@ To disable the browser's error messages, you need to cancel the `sl-invalid` eve
 
         event.target.focus();
       },
-      { capture: true } // you must use capture since sl-invalid doesn't bubble!
+      { capture: true } // you must use capture since st-invalid doesn't bubble!
     );
 
     // Handle form submit
@@ -504,46 +504,46 @@ To disable the browser's error messages, you need to cancel the `sl-invalid` eve
 
 <style>
   #name-error {
-    font-size: var(--sl-input-help-text-font-size-medium);
-    color: var(--sl-color-danger-700);
+    font-size: var(--st-input-help-text-font-size-medium);
+    color: var(--st-color-danger-700);
   }
 
-  #name-error ~ sl-button {
-    margin-top: var(--sl-spacing-medium);
+  #name-error ~ st-button {
+    margin-top: var(--st-spacing-medium);
   }
 
-  .inline-validation sl-input {
+  .inline-validation st-input {
     display: block;
   }
 
   /* user invalid styles */
-  .inline-validation sl-input[data-user-invalid]::part(base) {
-    border-color: var(--sl-color-danger-600);
+  .inline-validation st-input[data-user-invalid]::part(base) {
+    border-color: var(--st-color-danger-600);
   }
 
   .inline-validation [data-user-invalid]::part(form-control-label),
   .inline-validation [data-user-invalid]::part(form-control-help-text) {
-    color: var(--sl-color-danger-700);
+    color: var(--st-color-danger-700);
   }
 
-  .inline-validation sl-input:focus-within[data-user-invalid]::part(base) {
-    border-color: var(--sl-color-danger-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-danger-300);
+  .inline-validation st-input:focus-within[data-user-invalid]::part(base) {
+    border-color: var(--st-color-danger-600);
+    box-shadow: 0 0 0 var(--st-focus-ring-width) var(--st-color-danger-300);
   }
 
   /* User valid styles */
-  .inline-validation sl-input[data-user-valid]::part(base) {
-    border-color: var(--sl-color-success-600);
+  .inline-validation st-input[data-user-valid]::part(base) {
+    border-color: var(--st-color-success-600);
   }
 
   .inline-validation [data-user-valid]::part(form-control-label),
   .inline-validation [data-user-valid]::part(form-control-help-text) {
-    color: var(--sl-color-success-700);
+    color: var(--st-color-success-700);
   }
 
-  .inline-validation sl-input:focus-within[data-user-valid]::part(base) {
-    border-color: var(--sl-color-success-600);
-    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-success-300);
+  .inline-validation st-input:focus-within[data-user-valid]::part(base) {
+    border-color: var(--st-color-success-600);
+    box-shadow: 0 0 0 var(--st-focus-ring-width) var(--st-color-success-300);
   }
 </style>
 ```
@@ -562,7 +562,7 @@ import { getFormControls } from '@shoelace-style/shoelace/dist/utilities/form.js
 const form = document.querySelector('#my-form');
 const formControls = getFormControls(form);
 
-console.log(formControls); // e.g. [input, sl-input, ...]
+console.log(formControls); // e.g. [input, st-input, ...]
 ```
 
 :::tip

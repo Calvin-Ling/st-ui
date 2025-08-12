@@ -1,0 +1,788 @@
+/* 对接 Shoelace 的样式 */
+:root[theme-mode],
+:host[theme-mode] {
+  /* Primary colors - 主色调映射 */
+  --st-color-primary-500: var(--smt-brand-color);
+  --st-color-primary-600: var(--smt-brand-color-press);
+  --st-color-primary-700: var(--smt-brand-color-active);
+  --st-color-primary-50: var(--smt-brand-color-hover);
+  --st-color-primary-100: var(--smt-brand-color-hover);
+  --st-color-primary-200: var(--smt-secondary-bgcolor-hover);
+  --st-color-primary-300: var(--smt-primary-color-hover);
+  --st-color-primary-400: var(--smt-primary-color-hover);
+  --st-color-primary-800: var(--smt-brand-color-press);
+  --st-color-primary-900: var(--smt-brand-color-press);
+  --st-color-primary-950: var(--smt-brand-color-press);
+
+  /* Success colors - 成功色映射 */
+  --st-color-success-50: var(--smt-icon-font-color-success);
+  --st-color-success-100: var(--smt-icon-font-color-success);
+  --st-color-success-200: var(--smt-icon-font-color-success);
+  --st-color-success-300: var(--smt-icon-font-color-success);
+  --st-color-success-400: var(--smt-icon-font-color-success);
+  --st-color-success-500: var(--smt-icon-font-color-success);
+  --st-color-success-600: var(--smt-icon-font-color-success);
+  --st-color-success-700: var(--smt-icon-font-color-success);
+  --st-color-success-800: var(--smt-icon-font-color-success);
+  --st-color-success-900: var(--smt-icon-font-color-success);
+  --st-color-success-950: var(--smt-icon-font-color-success);
+
+  /* Warning colors - 警告色映射 */
+  --st-color-warning-50: var(--smt-icon-font-color-warning);
+  --st-color-warning-100: var(--smt-icon-font-color-warning);
+  --st-color-warning-200: var(--smt-icon-font-color-warning);
+  --st-color-warning-300: var(--smt-icon-font-color-warning);
+  --st-color-warning-400: var(--smt-icon-font-color-warning);
+  --st-color-warning-500: var(--smt-icon-font-color-warning);
+  --st-color-warning-600: var(--smt-icon-font-color-warning);
+  --st-color-warning-700: var(--smt-icon-font-color-warning);
+  --st-color-warning-800: var(--smt-icon-font-color-warning);
+  --st-color-warning-900: var(--smt-icon-font-color-warning);
+  --st-color-warning-950: var(--smt-icon-font-color-warning);
+
+  /* Danger colors - 危险色映射 */
+  --st-color-danger-50: var(--smt-icon-font-color-error);
+  --st-color-danger-100: var(--smt-icon-font-color-error);
+  --st-color-danger-200: var(--smt-icon-font-color-error);
+  --st-color-danger-300: var(--smt-icon-font-color-error);
+  --st-color-danger-400: var(--smt-icon-font-color-error);
+  --st-color-danger-500: var(--smt-icon-font-color-error);
+  --st-color-danger-600: var(--smt-icon-font-color-error);
+  --st-color-danger-700: var(--smt-icon-font-color-error);
+  --st-color-danger-800: var(--smt-icon-font-color-error);
+  --st-color-danger-900: var(--smt-icon-font-color-error);
+  --st-color-danger-950: var(--smt-icon-font-color-error);
+
+  /* Neutral colors - 中性色映射，对应 Shoelace 的设计系统 */
+  --st-color-neutral-0: var(--smt-white-color-1);
+  --st-color-neutral-50: var(--smt-container-bg-color);
+  --st-color-neutral-100: var(--smt-split-line-color);
+  --st-color-neutral-200: var(--smt-border-color);
+  --st-color-neutral-300: var(--smt-border-color);
+  --st-color-neutral-400: var(--smt-font-color-secondary);
+  --st-color-neutral-500: var(--smt-font-color-body);
+  --st-color-neutral-600: var(--smt-font-color-title);
+  --st-color-neutral-700: var(--smt-font-color-title);
+  --st-color-neutral-800: var(--smt-font-color-title);
+  --st-color-neutral-900: var(--smt-font-color-title);
+  --st-color-neutral-950: var(--smt-font-color-title);
+  --st-color-neutral-1000: var(--smt-black-color-1);
+
+  /* Border radius - 边框圆角映射 */
+  --st-border-radius-small: var(--smt-radius-small);
+  --st-border-radius-medium: var(--smt-radius-default);
+  --st-border-radius-large: var(--smt-radius-medium);
+  --st-border-radius-x-large: var(--smt-radius-large);
+  --st-border-radius-circle: var(--smt-radius-circle);
+  --st-border-radius-pill: var(--smt-radius-round);
+
+  /* Shadows - 阴影映射 */
+  --st-shadow-x-small: var(--smt-shadow-box);
+  --st-shadow-small: var(--smt-shadow-box);
+  --st-shadow-medium: var(--smt-shadow-box);
+  --st-shadow-large: var(--smt-shadow-box-popup);
+  --st-shadow-x-large: var(--smt-shadow-box-popup);
+
+  /* Spacing - 间距映射，使用 Shoelace 的标准值 */
+  --st-spacing-3x-small: 0.125rem;
+  --st-spacing-2x-small: 0.25rem;
+  --st-spacing-x-small: 0.5rem;
+  --st-spacing-small: 0.75rem;
+  --st-spacing-medium: 1rem;
+  --st-spacing-large: 1.25rem;
+  --st-spacing-x-large: 1.75rem;
+  --st-spacing-2x-large: 2.25rem;
+  --st-spacing-3x-large: 3rem;
+  --st-spacing-4x-large: 4.5rem;
+
+  /* Typography - 字体映射 */
+  --st-font-sans: var(--smt-font-family);
+  --st-font-size-2x-small: 0.625rem;
+  --st-font-size-x-small: 0.75rem;
+  --st-font-size-small: 0.875rem;
+  --st-font-size-medium: 1rem;
+  --st-font-size-large: 1.25rem;
+  --st-font-size-x-large: 1.5rem;
+  --st-font-size-2x-large: 2.25rem;
+  --st-font-size-3x-large: 3rem;
+  --st-font-size-4x-large: 4.5rem;
+
+  /* Font weights - 字体粗细 */
+  --st-font-weight-light: 300;
+  --st-font-weight-normal: 400;
+  --st-font-weight-semibold: 500;
+  --st-font-weight-bold: 700;
+
+  /* Line heights - 行高 */
+  --st-line-height-denser: 1;
+  --st-line-height-dense: 1.4;
+  --st-line-height-normal: 1.8;
+  --st-line-height-loose: 2.2;
+  --st-line-height-looser: 2.6;
+
+  /* Focus rings - 焦点环 */
+  --st-focus-ring-color: var(--smt-brand-color-active);
+  --st-focus-ring-style: solid;
+  --st-focus-ring-width: 3px;
+  --st-focus-ring: var(--st-focus-ring-style) var(--st-focus-ring-width) var(--st-focus-ring-color);
+  --st-focus-ring-offset: 1px;
+
+  /* Input styles - 输入框样式，对应 Shoelace 的设计 */
+  --st-input-height-small: 1.875rem;
+  --st-input-height-medium: 2.5rem;
+  --st-input-height-large: 3.125rem;
+  --st-input-background-color: var(--smt-bg-color-container);
+  --st-input-background-color-hover: var(--smt-bg-color-container);
+  --st-input-background-color-focus: var(--smt-bg-color-container);
+  --st-input-background-color-disabled: var(--smt-bg-color-weaktip);
+  --st-input-border-color: var(--smt-border-color);
+  --st-input-border-color-hover: var(--smt-border-color);
+  --st-input-border-color-focus: var(--smt-brand-color-active);
+  --st-input-border-color-disabled: var(--smt-border-color-disabled);
+  --st-input-border-width: 1px;
+  --st-input-color: var(--smt-font-color-input);
+  --st-input-color-hover: var(--smt-font-color-input);
+  --st-input-color-focus: var(--smt-font-color-input);
+  --st-input-color-disabled: var(--smt-font-color-weaktip);
+  --st-input-placeholder-color: var(--smt-placeholder-color);
+  --st-input-placeholder-color-disabled: var(--smt-font-color-weaktip);
+  --st-input-border-radius-small: var(--st-border-radius-medium);
+  --st-input-border-radius-medium: var(--st-border-radius-medium);
+  --st-input-border-radius-large: var(--st-border-radius-medium);
+  --st-input-font-family: var(--st-font-sans);
+  --st-input-font-weight: var(--st-font-weight-normal);
+  --st-input-font-size-small: var(--st-font-size-small);
+  --st-input-font-size-medium: var(--st-font-size-medium);
+  --st-input-font-size-large: var(--st-font-size-large);
+  --st-input-letter-spacing: normal;
+  --st-input-icon-color: var(--st-color-neutral-500);
+  --st-input-icon-color-hover: var(--st-color-neutral-600);
+  --st-input-icon-color-focus: var(--st-color-neutral-600);
+  --st-input-spacing-small: var(--st-spacing-small);
+  --st-input-spacing-medium: var(--st-spacing-medium);
+  --st-input-spacing-large: var(--st-spacing-large);
+  --st-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 40%);
+  --st-input-focus-ring-offset: 0;
+  --st-input-filled-background-color: var(--st-color-neutral-100);
+  --st-input-filled-background-color-hover: var(--st-color-neutral-100);
+  --st-input-filled-background-color-focus: var(--st-color-neutral-100);
+  --st-input-filled-background-color-disabled: var(--st-color-neutral-100);
+  --st-input-filled-color: var(--st-color-neutral-800);
+  --st-input-filled-color-hover: var(--st-color-neutral-800);
+  --st-input-filled-color-focus: var(--st-color-neutral-700);
+  --st-input-filled-color-disabled: var(--st-color-neutral-800);
+  --st-input-required-content: '*';
+  --st-input-required-content-offset: -2px;
+  --st-input-required-content-color: inherit;
+
+  /* Button styles - 按钮样式 */
+  --st-button-font-size-small: var(--st-font-size-x-small);
+  --st-button-font-size-medium: var(--st-font-size-small);
+  --st-button-font-size-large: var(--st-font-size-medium);
+
+  /* Toggle styles - 切换开关样式 */
+  --st-toggle-size-small: 0.875rem;
+  --st-toggle-size-medium: 1.125rem;
+  --st-toggle-size-large: 1.375rem;
+
+  /* Overlay styles - 遮罩层样式 */
+  --st-overlay-background-color: var(--smt-mask-active);
+
+  /* Panel styles - 面板样式 */
+  --st-panel-background-color: var(--smt-bg-color-container);
+  --st-panel-border-color: var(--smt-border-color);
+  --st-panel-border-width: 1px;
+
+  /* Tooltip styles - 工具提示样式 */
+  --st-tooltip-border-radius: var(--st-border-radius-medium);
+  --st-tooltip-background-color: var(--st-color-neutral-800);
+  --st-tooltip-color: var(--st-color-neutral-0);
+  --st-tooltip-font-family: var(--st-font-sans);
+  --st-tooltip-font-weight: var(--st-font-weight-normal);
+  --st-tooltip-font-size: var(--st-font-size-small);
+  --st-tooltip-line-height: var(--st-line-height-dense);
+  --st-tooltip-padding: var(--st-spacing-2x-small) var(--st-spacing-x-small);
+  --st-tooltip-arrow-size: 6px;
+
+  /* Z-indexes - 层级 */
+  --st-z-index-drawer: 700;
+  --st-z-index-dialog: 800;
+  --st-z-index-dropdown: 900;
+  --st-z-index-toast: 950;
+  --st-z-index-tooltip: 1000;
+
+  /* Transitions - 过渡动画 */
+  --st-transition-x-slow: 1000ms;
+  --st-transition-slow: 500ms;
+  --st-transition-medium: 250ms;
+  --st-transition-fast: 150ms;
+  --st-transition-x-fast: 50ms;
+
+  /* Letter spacings - 字母间距 */
+  --st-letter-spacing-denser: -0.03em;
+  --st-letter-spacing-dense: -0.015em;
+  --st-letter-spacing-normal: normal;
+  --st-letter-spacing-loose: 0.075em;
+  --st-letter-spacing-looser: 0.15em;
+
+  /* Input labels - 输入框标签 */
+  --st-input-label-font-size-small: var(--st-font-size-small);
+  --st-input-label-font-size-medium: var(--st-font-size-medium);
+  --st-input-label-font-size-large: var(--st-font-size-large);
+  --st-input-label-color: inherit;
+
+  /* Help text - 帮助文本 */
+  --st-input-help-text-font-size-small: var(--st-font-size-x-small);
+  --st-input-help-text-font-size-medium: var(--st-font-size-small);
+  --st-input-help-text-font-size-large: var(--st-font-size-medium);
+  --st-input-help-text-color: var(--st-color-neutral-500);
+}
+
+/** /vision/css/vars.css */
+/**
+ * 主题相关变更设置：包括颜色、字体、圆角、阴影及尺寸；
+ * 设置主题模式：document.documentElement.setAttribute('theme-mode', 'blue');
+ * 重置为默认模式：document.documentElement.removeAttribute('theme-mode');
+**/
+
+/**
+ *
+**/
+:root {
+  --smt-theme-color-default: #3370FF;
+  --smt-theme-color-default-v10: #3F99E7;
+  --smt-theme-color-blue-green: #1E95C1;
+  --smt-theme-color-blue: #3CABE7;
+  --smt-theme-color-dark: #1E95C1;
+  /* 与 blue-green 相同*/
+  --smt-theme-color-green: #0BB8B4;
+  --smt-theme-color-red: #D92F4D;
+  --smt-theme-color-orange: #F0831B;
+}
+
+/**
+ * 主题配置：默认
+**/
+:root[theme-mode],
+:root[theme-mode="st-default"] {
+  --smt-theme-color: var(--smt-theme-color-default);
+  /* 主题色，对应：rgb(51, 112, 255) */
+  --smt-brand-color: #4E5969;
+  /* 功能色：常态；对应：rgb(78, 89, 105)；主要适用于全局 图标/按钮 的文案/图案色显示； */
+  --smt-brand-color-press: #2B61DD;
+  /* 功能色：按下状态；主要适用于全局 图标/按钮 的按下状态； */
+  --smt-brand-color-hover: rgba(51, 112, 255, 0.08);
+  /* 功能色：悬停状态2；主要适用于全局 图标/按钮/列表的 背景悬停态显示； */
+  --smt-brand-color-active: rgba(51, 112, 255, 1);
+  /* 功能色：主色选中状态；比如主按钮颜色； */
+  --smt-brand-color-weak: rgba(78, 89, 105, 0.6);
+  /* 功能色：弱显示状态；比如日期控件中非当月的日期数字文本颜色； */
+  --smt-primary-color-hover: #5A8BFF;
+  /* 功能色：主色悬停状态； */
+  --smt-primary-color-disabled: rgba(51, 112, 255, 0.3);
+  /* 功能色：主色禁用状态； */
+  --smt-nav-color-hover: var(--smt-primary-color-disabled);
+  /* 功能色：悬停状态1；主要适用于左侧模块导航栏的：悬停状态； */
+  --smt-secondary-bgcolor-active: rgba(51, 112, 255, 0.14);
+  /* 功能色：选中状态；主要适用于全局资源树和面包屑选中态背影色显示； */
+  --smt-secondary-bgcolor-hover: rgba(51, 112, 255, 0.24);
+  /* 功能色：悬停状态；主要适用于开关悬停态背影色显示； */
+  --smt-font-color-title: #1D2129;
+  /* 主要用于全局一级标题色/输入框输入文字，或重要内容标示，表格列头； */
+  --smt-font-color-body: var(--smt-brand-color);
+  /* 主要用于全局正文/列表/表格（表头除外）/下拉菜单等场景默认使用色； */
+  --smt-font-color-secondary: #666666;
+  /* 三级（三级标题/次要文案/图标）； */
+  --smt-font-color-weaktip: #AEB6C0;
+  /* 主要用于禁用输入框或全局弱提示文案；禁用菜单项文本等 */
+  --smt-font-color-rule: #8C91A7;
+  /* 标尺文案 */
+  --smt-font-color-link: #366EF4;
+  /* 主要用于全局额链接文案； */
+  --smt-font-color-input: var(--smt-font-color-title);
+  /* 输入框输入文字 */
+  --smt-border-color: #D4D8E5;
+  /* 主要适用于各种含边容器的边框色； */
+  --smt-border-color-disabled: rgba(212, 216, 229, 0.3);
+  /* 禁用状态的边框色； */
+  --smt-border-color-popup: #DCDFE6;
+  /* 弹出菜单/面板的边框色； */
+  --smt-shadow-color: rgba(42, 56, 76, 0.08);
+  /* 阴影色； */
+  --smt-shadow-color-popup: rgba(0, 0, 0, 0.1);
+  /* 弹出菜单阴影色； */
+  --smt-split-line-color: #E9EDF2;
+  /* 主要适用于全局分割线色； */
+  --smt-container-bg-color: #F4F5F8;
+  /* 主要适用于全局文字说明背景色； */
+  --smt-popupmenu-head-bg-color: rgba(51, 112, 255, 0.03);
+  --smt-steps-bg-color: rgba(51, 112, 255, 0.04);
+  /* 步骤条背景色 */
+  --smt-loading-track-bg-color: rgba(51, 112, 255, 0.4);
+  /* 圆形Loading轨道背景色 */
+  --smt-main-banner-color: var(--smt-brand-color);
+  --smt-main-banner-bg-color: #FFFFFF;
+  --smt-main-banner-mark-color: var(--smt-theme-color);
+  --smt-bg-color-weaktip: var(--smt-container-bg-color);
+  /* 主要用于禁用输入框背景色； */
+}
+
+/**
+ * 主题配置：V10默认
+**/
+:root[theme-mode="st-v10_default"] {
+  --smt-theme-color: var(--smt-theme-color-default-v10);
+  /* 主题色，对应：rgb(63, 153, 231) */
+  --smt-brand-color-active: rgba(63, 153, 231, 1);
+  --smt-brand-color-hover: rgba(63, 153, 231, 0.08);
+  --smt-brand-color-press: var(--smt-brand-color-hover);
+  --smt-primary-color-hover: rgba(63, 153, 231, 0.8);
+  --smt-primary-color-disabled: rgba(63, 153, 231, 0.3);
+  --smt-secondary-bgcolor-active: rgba(63, 153, 231, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(63, 153, 231, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(63, 153, 231, 0.03);
+  --smt-steps-bg-color: rgba(63, 153, 231, 0.04);
+  --smt-loading-track-bg-color: rgba(63, 153, 231, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+  /** 以下为特别设置 */
+  --smt-sidebar-bg-color: #232C52;
+  /* 左侧导航栏背景色 */
+  --smt-bg-color-base-tree: #F9FAFC;
+  /* 资源树背景色 */
+  --smt-bg-color-base-tab: #F5F5F5;
+  /* 二级标签页背景色 */
+}
+
+/**
+ * 主题配置：蓝绿色
+**/
+:root[theme-mode="st-blueGreen"] {
+  --smt-theme-color: var(--smt-theme-color-blue-green);
+  /* 主题色，对应：rgb(30, 149, 193) */
+  --smt-brand-color-active: rgba(30, 149, 193, 1);
+  --smt-brand-color-hover: rgba(30, 149, 193, 0.08);
+  --smt-brand-color-press: #2287C0;
+  --smt-primary-color-hover: #53B2E8;
+  --smt-primary-color-disabled: rgba(30, 149, 193, 0.3);
+  --smt-secondary-bgcolor-active: rgba(30, 149, 193, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(30, 149, 193, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(30, 149, 193, 0.03);
+  --smt-steps-bg-color: rgba(30, 149, 193, 0.04);
+  --smt-loading-track-bg-color: rgba(30, 149, 193, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+}
+
+/**
+ * 主题配置：蓝色
+**/
+:root[theme-mode="st-blue"] {
+  --smt-theme-color: var(--smt-theme-color-blue);
+  /* 主题色，对应：rgb(60, 171, 231) */
+  --smt-brand-color-active: rgba(60, 171, 231, 1);
+  --smt-brand-color-hover: rgba(60, 171, 231, 0.08);
+  --smt-brand-color-press: #2287C0;
+  --smt-primary-color-hover: #53B2E8;
+  --smt-primary-color-disabled: rgba(60, 171, 231, 0.3);
+  --smt-secondary-bgcolor-active: rgba(60, 171, 231, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(60, 171, 231, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(60, 171, 231, 0.03);
+  --smt-steps-bg-color: rgba(60, 171, 231, 0.04);
+  --smt-loading-track-bg-color: rgba(60, 171, 231, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+}
+
+/**
+ * 主题配置：深色
+**/
+:root[theme-mode="st-dark"] {
+  --smt-theme-color: var(--smt-theme-color-dark);
+  /* 主题色，对应：rgb(30, 149, 193) */
+  --smt-brand-color-active: rgba(30, 149, 193, 1);
+  --smt-brand-color-hover: rgba(30, 149, 193, 0.08);
+  --smt-brand-color-press: #2287C0;
+  --smt-primary-color-hover: #53B2E8;
+  --smt-primary-color-disabled: rgba(30, 149, 193, 0.3);
+  --smt-secondary-bgcolor-active: rgba(30, 149, 193, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(30, 149, 193, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(30, 149, 193, 0.03);
+  --smt-steps-bg-color: rgba(30, 149, 193, 0.04);
+  --smt-loading-track-bg-color: rgba(30, 149, 193, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+  /** 以下为特别设置 */
+  --smt-bg-color-base-tree: #2D3A46;
+  /* 资源树背景色 */
+  --smt-bg-color-base-tab: var(--smt-bg-color-base-tree);
+  /* 二级标签页背景色 */
+}
+
+/**
+ * 主题配置：绿色
+**/
+:root[theme-mode="st-green"] {
+  --smt-theme-color: var(--smt-theme-color-green);
+  /* 主题色，对应：rgb(11, 184, 180) */
+  --smt-brand-color-active: rgba(11, 184, 180, 1);
+  --smt-brand-color-hover: rgba(11, 184, 180, 0.08);
+  --smt-brand-color-press: #099C99;
+  --smt-primary-color-hover: #3CC6C3;
+  --smt-primary-color-disabled: rgba(11, 184, 180, 0.3);
+  --smt-secondary-bgcolor-active: rgba(11, 184, 180, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(11, 184, 180, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(11, 184, 180, 0.03);
+  --smt-steps-bg-color: rgba(11, 184, 180, 0.04);
+  --smt-loading-track-bg-color: rgba(11, 184, 180, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+}
+
+/**
+ * 主题配置：红色
+**/
+:root[theme-mode="st-red"] {
+  --smt-theme-color: var(--smt-theme-color-red);
+  /* 主题色，对应：rgb(217, 47, 77) */
+  --smt-brand-color-active: rgba(217, 47, 77, 1);
+  --smt-brand-color-hover: rgba(217, 47, 77, 0.08);
+  --smt-brand-color-press: #B82841;
+  --smt-primary-color-hover: #E15971;
+  --smt-primary-color-disabled: rgba(217, 47, 77, 0.3);
+  --smt-secondary-bgcolor-active: rgba(217, 47, 77, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(217, 47, 77, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(217, 47, 77, 0.03);
+  --smt-steps-bg-color: rgba(217, 47, 77, 0.04);
+  --smt-loading-track-bg-color: rgba(217, 47, 77, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+}
+
+/**
+ * 主题配置：橙色
+**/
+:root[theme-mode="st-orange"] {
+  --smt-theme-color: var(--smt-theme-color-orange);
+  /* 主题色，对应：rgb(240, 131, 27) */
+  --smt-brand-color-active: rgba(240, 131, 27, 1);
+  --smt-brand-color-hover: rgba(240, 131, 27, 0.08);
+  --smt-brand-color-press: #CC6F17;
+  --smt-primary-color-hover: #F39C49;
+  --smt-primary-color-disabled: rgba(240, 131, 27, 0.3);
+  --smt-secondary-bgcolor-active: rgba(240, 131, 27, 0.14);
+  --smt-secondary-bgcolor-hover: rgba(240, 131, 27, 0.24);
+  --smt-popupmenu-head-bg-color: rgba(240, 131, 27, 0.03);
+  --smt-steps-bg-color: rgba(240, 131, 27, 0.04);
+  --smt-loading-track-bg-color: rgba(240, 131, 27, 0.4);
+  --smt-main-banner-color: #FFFFFF;
+  --smt-main-banner-bg-color: var(--smt-theme-color);
+  --smt-main-banner-mark-color: var(--smt-main-banner-color);
+}
+
+/**
+ * ///////////////////////////////////////////////
+ * // 后面的内容与主题色无关；若有关则需要抽取到上面；
+ * ///////////////////////////////////////////////
+**/
+
+/**
+ *
+**/
+:root {
+  --smt-font-family: "PingFang SC", "Microsoft YaHei", "SimSun", "Helvetica", Arial, "Sans-Serif";
+  --smt-font-size: 12px;
+  --smt-font-size-tab-head: 13px;
+}
+
+/**
+ *
+**/
+:root {
+  --smt-white-color-1: #FFFFFF;
+  /* 对应：rgba(255, 255, 255, 1)； pure white；侧边栏：一级文案（用于主要标题） */
+  --smt-white-color-2: rgba(255, 255, 255, 0.9);
+  /* white 90%；侧边栏：二级（导航标题） */
+  --smt-white-color-3: rgba(255, 255, 255, 0.7);
+  /* white 70%；侧边栏：图标 */
+  --smt-white-color-4: rgba(255, 255, 255, 0.4);
+  /* white 40%；侧边栏：图标 */
+  --smt-white-color-5: rgba(255, 255, 255, 0.2);
+  /* white 20%；顶部导航栏右上角按钮悬停背景色 */
+  --smt-black-color-1: #000000;
+  /* 对应：rgba(0, 0, 0, 1)；pure black； */
+  --smt-black-color-2: rgba(0, 0, 0, 0.15);
+  /* 顶部导航栏右上角按钮深色背景且按钮激活时的背景色 */
+  --smt-black-color-3: rgba(0, 0, 0, 0.6);
+  /* 次要文字图标色彩；消息弹窗 Toast 的关闭按钮颜色； */
+  --smt-gray-color-1: #F4F4F4;
+  /* 对应：rgba(244, 244, 244, 1)；顶部导航栏右上角按钮边框色 */
+  --smt-gray-color-2: rgba(244, 244, 244, 0.2);
+  /* 顶部导航栏右上角按钮深色背景时的边框色 */
+  --smt-gray-color-3: #c2c2c2;
+  --smt-required-color-1: #ff0000;
+  /* 必填项标识内容的颜色 */
+  --smt-error-color-1: var(--smt-theme-color-red);
+  /* 徽标(消息、待办)背景色 */
+  --smt-icon-font-size: 16px;
+  /* 字体图标默认大小 */
+  --smt-icon-font-color-success: #2BA471;
+  --smt-icon-font-color-warning: var(--smt-theme-color-orange);
+  --smt-icon-font-color-error: var(--smt-theme-color-red);
+  --smt-sidebar-bg-color: #181C38;
+  /* 侧边栏，背景，对应：rgb(24, 28, 56) */
+  --smt-sidebar-bg-color-active: var(--smt-brand-color-active);
+  /* 侧边栏选中状态背景 */
+  --smt-sidebar-bg-color-hover: var(--smt-nav-color-hover);
+  /* 侧边栏悬停状态背景 */
+  --smt-sidebar-font-color: var(--smt-white-color-3);
+  /* 侧边栏，文案 */
+  --smt-sidebar-menu-badge-bg-color: var(--smt-white-color-3);
+  /* 侧边栏，徽标背景色 */
+  --smt-sidebar-menu-badge-font-color: rgba(24, 28, 56, 0.7);
+  /* 侧边栏，徽标 */
+  --smt-canvas-bg-color: var(--smt-container-bg-color);
+  /* 画布底背景色 */
+  --smt-rule-color: #EEF0F9;
+  /* 标尺 */
+  --smt-rule-line-color: #C4C8D7;
+  /* 标尺线 */
+  --smt-text-color-primary: var(--smt-brand-color);
+  --smt-text-color-anti: var(--smt-white-color-2);
+  --smt-bg-color-container: var(--smt-white-color-1);
+  --smt-bg-color-container-hover: var(--smt-brand-color-hover);
+  --smt-bg-color-container-active: var(--smt-brand-color-hover);
+  --smt-bg-color-table-background: #ECF0F6B2;
+  /* 表格背景色，含约70%的不透明度 */
+  --smt-bg-color-table-head: #ECF0F6;
+  /* 表格列头背景色 */
+  --smt-bg-color-table-head-hover: #DDE3EB;
+  /* 表格列头悬停色 */
+  --smt-bg-color-table-odd-row: #FAFCFF;
+  /* 表格奇数行背景色 */
+  --smt-bg-color-table-even-row: var(--smt-white-color-1);
+  /* 表格偶数行背景色 */
+  --smt-bg-color-base-tree: var(--smt-bg-color-container);
+  /* 一级资源树背景色 */
+  --smt-bg-color-base-tab: var(--smt-bg-color-base-tree);
+  /* 二级标签页背景色(打开资源的Tab背景色) */
+  --smt-bg-color-card-container: #F0F4FA;
+  /* 公共设置等卡片容器背景色 */
+  --smt-dropdown-menu-bg-color-hover: var(--smt-secondary-bgcolor-active);
+  /* 下拉菜单项悬停背景色 */
+  --smt-error-color: var(--smt-error-color-1);
+  --smt-treenode-color-active: var(--smt-secondary-bgcolor-active);
+  --smt-head-logo-big-url: url(../writeCustomBgImg.jsp?theType=Page_Head_Logo_Big);
+  --smt-head-logo-big-light-url: url(../writeCustomBgImg.jsp?theType=Page_Head_Logo_Big_Light);
+  --smt-switch-bg-color: #F2F5FA;
+  /* 开关控件背景色 */
+  --smt-placeholder-color: var(--smt-font-color-weaktip);
+}
+
+/**
+ *
+**/
+:root {
+  --smt-main-banner-height: 46px;
+  /* 顶部导航栏高度 */
+  --smt-first-tab-header-height: 32px;
+  /* 一级Tabs高度 */
+  --smt-base-tab-header-height: 52px;
+  /* 二级标签页(打开资源的Tab)高度 */
+  --smt-secondary-tab-header-height: 40px;
+  /* 次级Tabs高度 */
+  --smt-sidebar-width: 136px;
+  /* 左侧栏宽度 */
+  --smt-sidebar-menu-height: 40px;
+  /* 左侧栏菜单项高度 */
+  --smt-dialog-title-height: 42px;
+  /* 对话框标题栏高度 */
+  --smt-dialog-button-area-height: 60px;
+  /* 对话框底部按钮区高度 */
+  --smt-table-row-height: 40px;
+  /* 表格/列表的行高 */
+  --smt-tree-row-height: 28px;
+  /* 树节点行高 */
+  --smt-form-row-height: 36px;
+  /* 表单的行高 */
+  --smt-menu-row-height: 28px;
+  /* 菜单项行高 */
+  --smt-input-height: 28px;
+  /* 表单输入框默认高度 */
+  --smt-button-height: 32px;
+  /* 默认按钮高度 */
+  --smt-button-height-form: var(--smt-input-height);
+  /* 表单中按钮高度 */
+  --smt-button-height-icon: 20px;
+  /* 图标按钮高度 */
+  --smt-popupmenu-head-width: 29px;
+  /* 有选中状态下拉/右键菜单左侧栏宽度 */
+}
+
+:root {
+  --smt-brand-color-focus: var(--smt-brand-color-press);
+  --smt-brand-color-disabled: var(--smt-bg-color-weaktip);
+  /*禁用输入框背景色*/
+  --smt-brand-color-light: var(--smt-brand-color-hover);
+  --smt-brand-bgcolor-active: var(--smt-brand-color-active);
+  --smt-brand-bgcolor-hover: var(--smt-brand-color-hover);
+  --smt-bg-color-page: var(--smt-border-color);
+  --smt-bg-color-container-select: var(--smt-bg-color-container);
+  --smt-bg-color-secondarycontainer: var(--smt-split-line-color);
+  --smt-bg-color-secondarycontainer-hover: var(--smt-border-color);
+  --smt-bg-color-secondarycontainer-active: var(--smt-split-line-color);
+  --smt-bg-color-component: var(--smt-split-line-color);
+  --smt-bg-color-component-hover: var(--smt-split-line-color);
+  --smt-bg-color-component-active: var(--smt-split-line-color);
+  --smt-bg-color-secondarycomponent: var(--smt-split-line-color);
+  --smt-bg-color-secondarycomponent-hover: var(--smt-split-line-color);
+  --smt-bg-color-secondarycomponent-active: var(--smt-split-line-color);
+  --smt-bg-color-component-disabled: var(--smt-container-bg-color);
+  --smt-bg-color-specialcomponent: var(--smt-bg-color-container);
+  --smt-bg-color-ds-item-mask: rgba(72, 83, 110, 0.9);
+  /* #48536e; 数据源卡片hover背景 */
+  --smt-bg-color-module-item-mask: rgba(15, 28, 56, 0.8);
+  /* #0F1C38; 数据准备、分析展现模块卡片hover背景 */
+  --smt-shadow-box: 0px 4px 14px var(--smt-shadow-color);
+  --smt-shadow-box-popup: 0px 12px 16px var(--smt-shadow-color-popup);
+  /* 弹出菜单/面板 */
+  --smt-shadow-menu: var(--smt-shadow-box);
+  --smt-shadow-popup: var(--smt-shadow-box-popup);
+  /* 弹出菜单/面板 */
+  --smt-shadow-loading: 0px 8px 18px var(--smt-shadow-color);
+  --smt-shadow-card: 0px 9px 15px rgba(214, 227, 252, 0.3);
+  /* 公共设置等卡片阴影 */
+  --smt-mask-active: rgba(0, 0, 0, 0.6);
+  --smt-mask-disabled: rgba(255, 255, 255, 0.6);
+}
+
+:root {
+  --smt-radius-small: 2px;
+  --smt-radius-default: 3px;
+  --smt-radius-default-top: var(--smt-radius-default) var(--smt-radius-default) 0 0;
+  --smt-radius-default-right: 0 var(--smt-radius-default) var(--smt-radius-default) 0;
+  --smt-radius-default-bottom: 0 0 var(--smt-radius-default) var(--smt-radius-default);
+  --smt-radius-default-left: var(--smt-radius-default) 0 0 var(--smt-radius-default);
+  --smt-radius-medium: 6px;
+  --smt-radius-large: 8px;
+  --smt-radius-extraLarge: 12px;
+  --smt-radius-round: 999px;
+  --smt-radius-circle: 50%;
+}
+
+:root {
+  --smt-font-family-medium: var(--smt-font-family);
+  --smt-font-size-link-small: 12px;
+  --smt-font-size-link-medium: 14px;
+  --smt-font-size-link-large: 16px;
+  --smt-font-size-mark-small: 12px;
+  --smt-font-size-mark-medium: 14px;
+  --smt-font-size-body-small: 12px;
+  --smt-font-size-body-medium: 14px;
+  --smt-font-size-body-large: 16px;
+  --smt-font-size-title-small: 14px;
+  --smt-font-size-title-medium: 16px;
+  --smt-font-size-title-large: 20px;
+  --smt-font-size-headline-small: 24px;
+  --smt-font-size-headline-medium: 28px;
+  --smt-font-size-headline-large: 36px;
+  --smt-font-size-display-medium: 48px;
+  --smt-font-size-display-large: 64px;
+  --smt-line-height-link-small: 20px;
+  --smt-line-height-link-medium: 22px;
+  --smt-line-height-link-large: 24px;
+  --smt-line-height-mark-small: 20px;
+  --smt-line-height-mark-medium: 22px;
+  --smt-line-height-body-small: 20px;
+  --smt-line-height-body-medium: 22px;
+  --smt-line-height-body-large: 24px;
+  --smt-line-height-title-small: 22px;
+  --smt-line-height-title-medium: 24px;
+  --smt-line-height-title-large: 28px;
+  --smt-line-height-headline-small: 32px;
+  --smt-line-height-headline-medium: 36px;
+  --smt-line-height-headline-large: 44px;
+  --smt-line-height-display-medium: 56px;
+  --smt-line-height-display-large: 72px;
+  --smt-font-link-small: var(--smt-font-size-link-small) / var(--smt-line-height-link-small) var(--smt-font-family);
+  --smt-font-link-medium: var(--smt-font-size-link-medium) / var(--smt-line-height-link-medium) var(--smt-font-family);
+  --smt-font-link-large: var(--smt-font-size-link-large) / var(--smt-line-height-link-large) var(--smt-font-family);
+  --smt-font-mark-small: 600 var(--smt-font-size-mark-small) / var(--smt-line-height-mark-small) var(--smt-font-family);
+  --smt-font-mark-medium: 600 var(--smt-font-size-mark-medium) / var(--smt-line-height-mark-medium) var(--smt-font-family);
+  --smt-font-body-small: var(--smt-font-size-body-small) / var(--smt-line-height-body-small) var(--smt-font-family);
+  --smt-font-body-medium: var(--smt-font-size-body-medium) / var(--smt-line-height-body-medium) var(--smt-font-family);
+  --smt-font-body-large: var(--smt-font-size-body-large) / var(--smt-line-height-body-large) var(--smt-font-family);
+  --smt-font-title-small: 600 var(--smt-font-size-title-small) / var(--smt-line-height-title-small) var(--smt-font-family);
+  --smt-font-title-medium: 600 var(--smt-font-size-title-medium) / var(--smt-line-height-title-medium) var(--smt-font-family);
+  --smt-font-title-large: 600 var(--smt-font-size-title-large) / var(--smt-line-height-title-large) var(--smt-font-family);
+  --smt-font-headline-small: 600 var(--smt-font-size-headline-small) / var(--smt-line-height-headline-small) var(--smt-font-family);
+  --smt-font-headline-medium: 600 var(--smt-font-size-headline-medium) / var(--smt-line-height-headline-medium) var(--smt-font-family);
+  --smt-font-headline-large: 600 var(--smt-font-size-headline-large) / var(--smt-line-height-headline-large) var(--smt-font-family);
+  --smt-font-display-medium: 600 var(--smt-font-size-display-medium) / var(--smt-line-height-display-medium) var(--smt-font-family);
+  --smt-font-display-large: 600 var(--smt-font-size-display-large) / var(--smt-line-height-display-large) var(--smt-font-family);
+}
+
+:root {
+  --smt-size-1: 2px;
+  --smt-size-2: 4px;
+  --smt-size-3: 6px;
+  --smt-size-4: 8px;
+  --smt-size-5: 12px;
+  --smt-size-6: 16px;
+  --smt-size-7: 20px;
+  --smt-size-8: 24px;
+  --smt-size-9: 28px;
+  --smt-size-10: 32px;
+  --smt-size-11: 36px;
+  --smt-size-12: 40px;
+  --smt-size-13: 48px;
+  --smt-size-14: 56px;
+  --smt-size-15: 64px;
+  --smt-size-16: 72px;
+  --smt-comp-size-xxxxs: var(--smt-size-5);
+  --smt-comp-size-xxxs: var(--smt-size-6);
+  --smt-comp-size-xxs: var(--smt-size-7);
+  --smt-comp-size-xs: var(--smt-size-8);
+  --smt-comp-size-s: var(--smt-size-9);
+  --smt-comp-size-m: var(--smt-size-10);
+  --smt-comp-size-l: var(--smt-size-11);
+  --smt-comp-size-xl: var(--smt-size-12);
+  --smt-comp-size-xxl: var(--smt-size-13);
+  --smt-comp-size-xxxl: var(--smt-size-14);
+  --smt-comp-size-xxxxl: var(--smt-size-15);
+  --smt-comp-size-xxxxxl: var(--smt-size-16);
+  --smt-pop-padding-s: var(--smt-size-2);
+  --smt-pop-padding-m: var(--smt-size-3);
+  --smt-pop-padding-l: var(--smt-size-4);
+  --smt-pop-padding-xl: var(--smt-size-5);
+  --smt-pop-padding-xxl: var(--smt-size-6);
+  --smt-comp-paddingLR-xxs: var(--smt-size-1);
+  --smt-comp-paddingLR-xs: var(--smt-size-2);
+  --smt-comp-paddingLR-s: var(--smt-size-4);
+  --smt-comp-paddingLR-m: var(--smt-size-5);
+  --smt-comp-paddingLR-l: var(--smt-size-6);
+  --smt-comp-paddingLR-xl: var(--smt-size-8);
+  --smt-comp-paddingLR-xxl: var(--smt-size-10);
+  --smt-comp-paddingTB-xxs: var(--smt-size-1);
+  --smt-comp-paddingTB-xs: var(--smt-size-2);
+  --smt-comp-paddingTB-s: var(--smt-size-4);
+  --smt-comp-paddingTB-m: var(--smt-size-5);
+  --smt-comp-paddingTB-l: var(--smt-size-6);
+  --smt-comp-paddingTB-xl: var(--smt-size-8);
+  --smt-comp-paddingTB-xxl: var(--smt-size-10);
+  --smt-comp-margin-xxs: var(--smt-size-1);
+  --smt-comp-margin-xs: var(--smt-size-2);
+  --smt-comp-margin-s: var(--smt-size-4);
+  --smt-comp-margin-m: var(--smt-size-5);
+  --smt-comp-margin-l: var(--smt-size-6);
+  --smt-comp-margin-xl: var(--smt-size-7);
+  --smt-comp-margin-xxl: var(--smt-size-8);
+  --smt-comp-margin-xxxl: var(--smt-size-10);
+  --smt-comp-margin-xxxxl: var(--smt-size-12);
+}
